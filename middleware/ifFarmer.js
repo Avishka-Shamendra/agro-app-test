@@ -1,4 +1,4 @@
-const ifAdmin = (req, res, next) => {
+const ifFarmer = (req, res, next) => {
     if (req.session.user && req.session.user.type) {
         if (req.session.user.type === 'farmer') { // if farmer
             next();
@@ -10,4 +10,4 @@ const ifAdmin = (req, res, next) => {
     }
 };
 
-module.exports = ifAdmin;
+module.exports = ifFarmer;

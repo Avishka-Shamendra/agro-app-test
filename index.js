@@ -22,14 +22,15 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true })); 
 app.use(bodyParser.json());
 
-app.use(session({
-    store: new (pgConnect(session))({ conString: process.env.DATABASE_URL }),
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false,
-    cookie: { maxAge: 7 * 24 * 60 * 60 * 1000 },// 7 days
-}));
-
+if(app.settings.env !=='test'){
+    app.use(session({
+        store: new (pgConnect(session))({ conString: process.env.DATABASE_URL }),
+        secret: process.env.SESSION_SECRET,
+        resave: false,
+        saveUninitialized: false,
+        cookie: { maxAge: 7 * 24 * 60 * 60 * 1000 },// 7 days
+    }));
+};
 /* Define the static files and routes */
 app.use('/assets', express.static('public/assets'));
 app.use(require('./routes'));
@@ -50,10 +51,9 @@ app.use((err, req, res,next) => {
                 console.log(`Error occurred: ${err}`);
             });
 });
-
 /* Listen on the port for requests */
-app.listen(process.env.PORT || 3000, () => {
+const server = app.listen(process.env.PORT || 3000, () => {
     console.log('Express server listening on port %d in %s mode', process.env.PORT, app.settings.env);
 });
 
-module.exports = app;
+module.exports = { app,server };
