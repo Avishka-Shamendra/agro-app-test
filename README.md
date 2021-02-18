@@ -16,29 +16,29 @@ psql -U postgres
 
 ```sql
 CREATE ROLE agro_app_test WITH LOGIN PASSWORD 'password';
-CREATE DATABASE agro_app__test_db;
-GRANT ALL PRIVILEGES ON DATABASE agro_app__test_db TO agro_app_test;
+CREATE DATABASE agro_app_test_db;
+GRANT ALL PRIVILEGES ON DATABASE agro_app_test_db TO agro_app_test;
 \q
 ```
 
 Then login to `psql` as `agri_app`.
 
 ```bash
-psql -U agro_app_test agro_app__test_db
+psql -U agro_app_test agro_app_test_db
 ```
 
 Download `database` directory from this repo and then in the shell,
 import the current DDL and DML schema. Here give the full path to the schema
 
 ```sql
-\i 'C:/Users/.../database/schema.sql'
+\i 'C:/Users/.../database/deploy_schema.sql'
 \q
 ```
 
 Login to pgAdmin (Search in start menu) using the username and password used in the installation process of postgres.
 
 
-Then rclick Server>postgres>Databases and check for `agro_app__test_db`. Then you can expand it go to Schemas>Tables>Table_Name>rclick>View edit data>All rows 
+Then rclick Server>postgres>Databases and check for `agro_app_test_db`. Then you can expand it go to Schemas>Tables>Table_Name>rclick>View edit data>All rows 
 
 (Optional)
 To run sql queries using pgAdmin rclick the database and select query tool.
@@ -78,7 +78,7 @@ Create a `.env` file in the root with following content.
 You may change database user/password/secret as you may wish.
 
 ```text
-DATABASE_URL=postgres://agro_app_test:password@localhost:5432/agro_app__test_db
+DATABASE_URL=postgres://agro_app_test:password@localhost:5432/agro_app_test_db
 PORT=3000
 
 

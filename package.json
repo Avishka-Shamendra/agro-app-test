@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon start",
-    "test":"jest --watchAll --verbose"
+    "test": "jest --watchAll --verbose"
   },
   "keywords": [
     "group",
