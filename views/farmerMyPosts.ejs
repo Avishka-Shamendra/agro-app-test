@@ -1,0 +1,127 @@
+<%- include('_header',{user}) %>
+<div class="container p-1">
+    <h2 class="p-3 text-center">My Posts</h1>
+        <% if(error) { %>
+            <div class="alert alert-danger text-center" role="alert">
+                <%=error%>
+            </div>
+        <%} %>
+        <% if(success) { %>
+            <div class="alert alert-success text-center" role="alert">
+                <%=success%>
+            </div>
+        <%} %>
+        <div class="card shadow rounded border-success">
+            <div class="nav-tabs-boxed">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#allposts" role="tab"
+                            aria-controls="allposts" aria-selected="true">All Posts</a></li>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#activeposts" role="tab"
+                        aria-controls="activeposts" aria-selected="false">Active Posts</a></li>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#soldposts" role="tab"
+                        aria-controls="soldposts" aria-selected="false">Sold Posts</a></li>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#expiredposts" role="tab"
+                        aria-controls="expiredposts" aria-selected="false">Expired Posts</a></li>
+    
+                </ul>
+                <div class="tab-content p-3">
+                    <div class="tab-pane active" id="allposts" role="tabpanel">
+                        
+                        <div class="p-3">
+                            <% if(posts && posts.length!=0) {%>
+                                <% posts.forEach(function(post){%>
+                                    <%- include('componentFarmerPost',{post})%>
+                                <%});%>
+
+                                
+                
+                                <% }else{ %>
+                                    <div class="text-center">
+                                        <img src="/assets/my_posts_all.jpg"
+                                            class="img-fluid" alt="All Posts" width="40%" />
+                                            <br>
+                                    </div>
+                                    <div class="alert alert-warning text-center">
+                                        <strong>No Posts Available</strong>
+                                    </div>
+                                <%}%>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="activeposts" role="tabpanel">
+                        <div class="p-3">
+                            <% if(activePosts && activePosts.length!=0) {%>
+                                <% activePosts.forEach(function(post){%>
+                                    <%- include('componentFarmerPost',{post})%>
+                                <%});%>
+
+                                
+                
+                                <% }else{ %>
+                                    <div class="text-center">
+                                        <img src="/assets/my_posts_all.jpg"
+                                            class="img-fluid" alt="All Posts" width="40%" />
+                                            <br>
+                                    </div>
+                                    <div class="alert alert-warning text-center">
+                                        <strong>No Active Posts</strong>
+                                    </div>
+    
+                                <%}%>
+                            
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="soldposts" role="tabpanel">
+                        <div class="p-3">
+                            <% if(soldPosts && soldPosts.length!=0) {%>
+                                <div class="alert alert-warning text-center">
+                                    <strong>You may delete "Sold Posts" as they are no longer visible to buyers</strong>
+                                </div>
+                                <% soldPosts.forEach(function(post){%>
+                                  <%- include('componentFarmerPost',{post})%>
+                                <%});%>
+                            <% }else{ %>
+                                <div class="text-center">
+                                    <img src="/assets/my_posts_all.jpg"
+                                        class="img-fluid" alt="All Posts" width="40%" />
+                                        <br>
+                                </div>
+                                <div class="alert alert-warning text-center">
+                                    <strong>No Sold Posts</strong>
+                                </div>
+
+                            <%}%>
+                            
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="expiredposts" role="tabpanel">
+                        <div class="p-3">
+                            <% if(expiredPosts && expiredPosts.length!=0) {%>
+                                <div class="alert alert-warning text-center">
+                                    <strong>You may delete "Expired Posts" as they are no longer visible to buyers</strong>
+                                </div>
+                                <% expiredPosts.forEach(function(post){%>
+                                  <%- include('componentFarmerPost',{post})%>
+                                <%});%>
+                            <% }else{ %>
+                                <div class="text-center">
+                                    <img src="/assets/my_posts_all.jpg"
+                                        class="img-fluid" alt="All Posts" width="40%" />
+                                        <br>
+                                </div>
+                                <div class="alert alert-warning text-center">
+                                    <strong>No Expired Posts</strong>
+                                </div>
+
+                            <%}%>
+                            
+                        </div>
+                    </expired
+                </div>
+            </div>
+    
+        </div>
+        
+
+</div>
+
+<%- include('_footer') %>

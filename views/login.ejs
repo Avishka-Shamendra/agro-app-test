@@ -1,0 +1,62 @@
+<%- include('_header',{user}) %>
+
+ <div class="container py-4">
+     <div class="card  rounded shadow-lg border-success">
+        <div class="row card-body">
+            <div class="col-md-6 col-sm-12 text-center">
+                <img src="/assets/login.jpg" alt="Login"
+                    width="80%" />
+                <br>
+            </div>
+            <div class="col-md-6 col-sm-12 align-self-center">
+            
+                <h3 class="text-center">Log  In</h3>
+                <form method="POST" action="/login">
+                    <% if (error) {%>
+                    <div class="alert alert-danger text-center" role="alert">
+                        <%=error%>
+                    </div>
+                    <% } %>
+                    <% if (del_acc_success) {%>
+                        <div class="alert alert-danger text-center" role="alert">
+                            <%=del_acc_success%>
+                        </div>
+                        <% } %>
+                    <% if (adminRegSuccess) {%>
+                    <div class="alert alert-success text-center" role="alert">
+                        <%=adminRegSuccess%>
+                    </div>
+                    <% } %>
+                    <% if (farmerRegSuccess) {%>
+                    <div class="alert alert-success text-center" role="alert">
+                        <%=farmerRegSuccess%>
+                    </div>
+                    <% } %>
+                    <% if (buyerRegSuccess) {%>
+                    <div class="alert alert-success" role="alert">
+                        <%=buyerRegSuccess%>
+                    </div>
+                    <% } %>
+                    <div class="form-group">
+                        <label for="email">Enter Your Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" required value="<%=email%>" maxlength="100">
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="password">Enter Password</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                    </div>
+    
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-success">Log In Now</button>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+
+     </div>
+
+ </div>
+
+<%- include('_footer') %>
