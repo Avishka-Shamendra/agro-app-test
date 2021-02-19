@@ -34,6 +34,12 @@ import the current DDL and DML schema. Here give the full path to the schema
 \i 'C:/Users/.../database/deploy_schema.sql'
 \q
 ```
+Then locate the `test_inserts_schema.sql` in test folder and
+
+```sql
+\i 'C:/Users/.../test/test_inserts_schema.sql'
+\q
+```
 
 Login to pgAdmin (Search in start menu) using the username and password used in the installation process of postgres.
 
@@ -86,14 +92,12 @@ REG_KEY = qmYwp6J3yJO3TQKPaVTuUQnFGU6gCAxu
 SESSION_SECRET=secret
 ```
 
-Then use `nodemon` or `node` to serve the pages.Nodemon is recommended
+Then to run tests,
 
 ```bash
-nodemon start # If nodemon is installed
-node index.js # otherwise
+npm test
 ```
 
-Now visit <http://localhost:3000/> and confirm that site is running.
 
 ### VS Code Setup
 
