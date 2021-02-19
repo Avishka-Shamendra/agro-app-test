@@ -16,7 +16,7 @@ class AdminController {
             user: req.session.user,
          });
     }
-
+    
     static async search(req, res){
         try{
             const pattern = /[0-9]/g;
