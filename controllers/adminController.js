@@ -16,7 +16,7 @@ class AdminController {
             user: req.session.user,
          });
     }
-
+    
     static async search(req, res){
         try{
             const pattern = /[0-9]/g;
@@ -171,7 +171,7 @@ class AdminController {
                     res.redirect(`/admin/farmer/${req.params.uid}?ban_success=Farmer ${name.toUpperCase()}  was successfully banned`);
                 }
                 else{
-                    throw Error.BadRequest('OOPS Ban Unsuccessful');
+                    throw new Error.BadRequest('OOPS Ban Unsuccessful');
                 }
 
             }
@@ -202,7 +202,7 @@ class AdminController {
                     res.redirect(`/admin/farmer/${req.params.uid}?unban_success=Farmer ${name} was successfully unbanned`);
                 }
                 else{
-                    throw Error.BadRequest('OOPS UnBan Unsuccessful');
+                    throw new Error.BadRequest('OOPS UnBan Unsuccessful');
                 }
             }
 

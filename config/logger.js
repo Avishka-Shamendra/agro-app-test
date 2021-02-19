@@ -22,7 +22,7 @@ const rawLogger = (file, service) => {
         transports: [new File({ filename: file, format: winstonFormatter })],
     });
     if (process.env.NODE_ENV !== 'production') {
-        wl.add(new Console({ format: winstonFormatter }));
+        //wl.add(new Console({ format: winstonFormatter }));
     }
     return wl;
 };

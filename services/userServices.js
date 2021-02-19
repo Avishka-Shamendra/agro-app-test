@@ -74,8 +74,11 @@ class UserService {
 
 
         const user = await User.findUser(email);
+        if(!user){
+            throw new Errors.BadRequest('No Such User Exist');
+        }
         if (user && user.uid!=uid) {
-            throw new Errors.BadRequest(' Email is already registered');
+            throw new Errors.BadRequest('Email is already registered');
         }
         return User.updateUser(firstName,lastName,gender,email,uid);
     }
