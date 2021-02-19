@@ -1,4 +1,4 @@
-const ifAdmin = (req, res, next) => {
+const ifBuyer = (req, res, next) => {
     if (req.session.user && req.session.user.type) {
         if (req.session.user.type === "buyer") { // if buyer
             next();
@@ -10,4 +10,4 @@ const ifAdmin = (req, res, next) => {
     }
 };
 
-module.exports = ifAdmin;
+module.exports = ifBuyer;
