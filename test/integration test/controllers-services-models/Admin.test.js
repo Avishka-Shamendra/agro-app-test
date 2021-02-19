@@ -1,20 +1,22 @@
 const AdminController = require('../../../controllers/adminController');
 const sql = require('../../../config/db');
-const bcrypt = require('bcrypt');
 let server;
 describe('Admin Controller', () => {
     const res={
         render:null,
         redirect:null,
+        json:null,
     };
     beforeEach(async () => {
         server = require('../../../index').server; 
         res.render= jest.fn();
         res.redirect= jest.fn();  
+        res.json= jest.fn();
     });
     afterEach(async () => {
         res.render= null;
         res.redirect= null;
+        res.json=null;
         await server.close();
     });
     afterAll(async()=>{
@@ -393,7 +395,7 @@ describe('Admin Controller', () => {
             expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/admin[?]error/));
         });
     });
-    describe('deleteFarmer Method', () => {
+    describe('deleteFarmer method', () => {
         let req;
         beforeEach(() => {
             req={
@@ -425,7 +427,7 @@ describe('Admin Controller', () => {
             expect(res.redirect).toHaveBeenCalledWith('/admin/farmer/00000000-0000-4000-8000-111000000003?error=BadRequest: OOPS something went wrong could not delete account');
         })
     });
-    describe('deleteBuyer Method', () => {
+    describe('deleteBuyer method', () => {
         let req;
         beforeEach(() => {
             req={
@@ -456,5 +458,65 @@ describe('Admin Controller', () => {
             await AdminController.deleteBuyer(req,res)
             expect(res.redirect).toHaveBeenCalledWith('/admin/buyer/00000000-0000-4000-8000-111000000003?error=BadRequest: OOPS something went wrong could not delete account');
         })
+    });
+    describe('adminPostsPage method', () => {
+        let req;
+        beforeEach(() => {
+            req={
+                query:{error:'',success:''},
+                session:{user:{uid:''}}
+            }
+        });
+        it('should render adminPostsPage if no error', async () => {
+            await AdminController.adminPostsPage(req,res)
+            expect(res.render).toHaveBeenCalledWith('adminPostsPage',expect.objectContaining({
+                error:expect.any(String),
+                success:expect.any(String),
+                user: expect.any(Object),
+                activePosts: expect.any(Array),
+                soldPosts: expect.any(Array),
+                expiredPosts: expect.any(Array),
+            }));
+        });
+        it('should redirect to admin if error', async () => {
+            req.query=null
+            await AdminController.adminPostsPage(req,res)
+            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/admin[?]error=/));
+        });
+    });
+    describe('search method', () => {
+        let req;
+        beforeEach(() => {
+            req={
+                query:{query:''},
+            }
+        });
+        it('should return a json object with type nic and success set to true if query was made using numbers between 0-9', async () => {
+            req.query.query="9"
+            await AdminController.search(req,res)
+            expect(res.json).toHaveBeenCalledWith(expect.objectContaining({
+                success:true,
+                type:'nic',
+                farmers:expect.any(Array),
+                buyers:expect.any(Array),
+            }));
+        });
+        it('should return a json object with type name and success set to true if query was made using letters not regex /[0-9]/g', async () => {
+            req.query.query='Avi'
+            await AdminController.search(req,res)
+            expect(res.json).toHaveBeenCalledWith(expect.objectContaining({
+                success:true,
+                type:'name',
+                users:expect.any(Array),
+            }));
+        });
+        it('should return a json with success false if error occurs', async () => {
+            req.query=null
+            await AdminController.search(req,res)
+            expect(res.json).toHaveBeenCalledWith(expect.objectContaining({
+                success:false,
+                error:expect.anything(),
+            }));
+        });
     });
 });
