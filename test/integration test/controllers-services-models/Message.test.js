@@ -44,35 +44,35 @@ describe('Message Controller', () => {
         });
         it('should redirect /buyer/viewpost page with success message if no error',async ()=>{
             await MessageController.buyerRequest(req,res);
-            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/Your buyer request is sent to the farmer. Get in touch with the farmer using the contact number for/));
+            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]buyer[/]viewpost[/]50000000-0000-4000-8000-000000000000[?]msg_success=Your buyer request is sent to the farmer./));
         })
 
         it('should redirect /buyer/viewpost with Validation Error if Title Joi Validation fails',async ()=>{
             req.body.title="ab"
             await MessageController.buyerRequest(req,res);
-            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/msg_error=ValidationError: "Title" length must be at least 5 characters long/));
+            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/buyer[/]viewpost[/]50000000-0000-4000-8000-000000000000[?]msg_error=ValidationError: "Title" length must be at least 5 characters long/));
         })
 
         it('should redirect /buyer/viewpost with Validation Error if Description Joi Validation fails',async ()=>{
             req.body.description="ab"
             await MessageController.buyerRequest(req,res);
-            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/ValidationError: "Message" length must be at least 20 characters/));
+            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]buyer[/]viewpost[/]50000000-0000-4000-8000-000000000000[?]msg_error=ValidationError: "Message" length must be at least 20 characters/));
         })
         it('should redirect /buyer/viewpost with Error if already have sent a buyer request',async ()=>{
             req.session.user.uid="00000000-0000-4000-8000-000000000004"
             req.params.postid="10000000-0000-4000-8000-000000000000"
             await MessageController.buyerRequest(req,res);
-            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/Unauthorized: You have already sent a request to this post/));
+            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]buyer[/]viewpost[/]10000000-0000-4000-8000-000000000000[?]msg_error=Unauthorized: You have already sent a request to this post/));
         })
         it('should redirect /buyer/viewpost with Error if post is not in status Active',async ()=>{
             req.params.postid="30000000-0000-4000-8000-000000000000"
             await MessageController.buyerRequest(req,res);
-            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/msg_error=BadRequest: OOPS could not send message/));
+            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]buyer[/]viewpost[/]30000000-0000-4000-8000-000000000000[?]msg_error=BadRequest: OOPS could not send message/));
         })
         it('should redirect /buyer/viewpost with Error if user is not a buyer',async ()=>{
             req.session.user.uid="00000000-0000-4000-8000-000000000002"
             await MessageController.buyerRequest(req,res);
-            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/msg_error=Unauthorized: You do not have permission to add new posts/));
+            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]buyer[/]viewpost[/]50000000-0000-4000-8000-000000000000[?]msg_error=Unauthorized: You do not have permission to add new posts/));
         })
     });
 })
