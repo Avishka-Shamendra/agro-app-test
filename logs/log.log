@@ -1475,3 +1475,998 @@ error: admin-controller [2021-02-20 04:04:49 PM +0530] "BadRequest"
 error: admin-controller [2021-02-20 04:04:49 PM +0530] "BadRequest"
 error: admin-controller [2021-02-20 04:04:49 PM +0530] undefined
 error: admin-controller [2021-02-20 04:04:49 PM +0530] undefined
+error: message-controller [2021-02-20 04:06:11 PM +0530] [{"message":"\"Title\" length must be at least 5 characters long","path":["title"],"type":"string.min","context":{"limit":5,"value":"ab","label":"Title","key":"title"}}]
+error: message-controller [2021-02-20 04:06:11 PM +0530] [{"message":"\"Message\" length must be at least 20 characters long","path":["description"],"type":"string.min","context":{"limit":20,"value":"ab","label":"Message","key":"description"}}]
+error: message-controller [2021-02-20 04:06:11 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 04:06:11 PM +0530] "BadRequest"
+error: message-controller [2021-02-20 04:06:11 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 04:06:12 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 04:06:12 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 04:06:12 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 04:06:13 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 04:06:13 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 04:06:13 PM +0530] undefined
+error: admin-controller [2021-02-20 04:06:13 PM +0530] undefined
+error: admin-controller [2021-02-20 04:06:13 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 04:06:13 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 04:06:13 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 04:06:13 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 04:06:13 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 04:06:13 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 04:06:13 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 04:06:13 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 04:06:13 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 04:06:13 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 04:06:13 PM +0530] undefined
+error: admin-controller [2021-02-20 04:06:13 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 04:06:13 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 04:06:13 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 04:06:13 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 04:06:13 PM +0530] undefined
+error: admin-controller [2021-02-20 04:06:13 PM +0530] undefined
+error: message-controller [2021-02-20 05:01:01 PM +0530] [{"message":"\"Title\" length must be at least 5 characters long","path":["title"],"type":"string.min","context":{"limit":5,"value":"ab","label":"Title","key":"title"}}]
+error: message-controller [2021-02-20 05:01:01 PM +0530] [{"message":"\"Message\" length must be at least 20 characters long","path":["description"],"type":"string.min","context":{"limit":20,"value":"ab","label":"Message","key":"description"}}]
+error: message-controller [2021-02-20 05:01:01 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:01:01 PM +0530] "BadRequest"
+error: message-controller [2021-02-20 05:01:01 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:01:02 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:01:02 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:01:02 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:01:03 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:01:03 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:01:03 PM +0530] undefined
+error: admin-controller [2021-02-20 05:01:03 PM +0530] undefined
+error: admin-controller [2021-02-20 05:01:03 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:01:03 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:01:03 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:01:03 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:01:03 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:01:03 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:01:03 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:01:03 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:01:03 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:01:03 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:01:03 PM +0530] undefined
+error: admin-controller [2021-02-20 05:01:03 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:01:03 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:01:03 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:01:03 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:01:03 PM +0530] undefined
+error: admin-controller [2021-02-20 05:01:03 PM +0530] undefined
+error: message-controller [2021-02-20 05:03:53 PM +0530] [{"message":"\"Title\" length must be at least 5 characters long","path":["title"],"type":"string.min","context":{"limit":5,"value":"ab","label":"Title","key":"title"}}]
+error: message-controller [2021-02-20 05:03:53 PM +0530] [{"message":"\"Message\" length must be at least 20 characters long","path":["description"],"type":"string.min","context":{"limit":20,"value":"ab","label":"Message","key":"description"}}]
+error: message-controller [2021-02-20 05:03:54 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:03:54 PM +0530] "BadRequest"
+error: message-controller [2021-02-20 05:03:54 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:03:55 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:03:55 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:03:55 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:03:55 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:03:55 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:03:55 PM +0530] undefined
+error: admin-controller [2021-02-20 05:03:55 PM +0530] undefined
+error: admin-controller [2021-02-20 05:03:55 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:03:55 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:03:55 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:03:55 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:03:55 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:03:55 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:03:55 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:03:55 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:03:55 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:03:55 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:03:55 PM +0530] undefined
+error: admin-controller [2021-02-20 05:03:55 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:03:55 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:03:55 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:03:55 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:03:55 PM +0530] undefined
+error: admin-controller [2021-02-20 05:03:55 PM +0530] undefined
+error: message-controller [2021-02-20 05:04:48 PM +0530] [{"message":"\"Title\" length must be at least 5 characters long","path":["title"],"type":"string.min","context":{"limit":5,"value":"ab","label":"Title","key":"title"}}]
+error: message-controller [2021-02-20 05:04:48 PM +0530] [{"message":"\"Message\" length must be at least 20 characters long","path":["description"],"type":"string.min","context":{"limit":20,"value":"ab","label":"Message","key":"description"}}]
+error: message-controller [2021-02-20 05:04:48 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:04:48 PM +0530] "BadRequest"
+error: message-controller [2021-02-20 05:04:48 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:04:49 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:04:49 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:04:49 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:04:49 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:04:49 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:04:49 PM +0530] undefined
+error: admin-controller [2021-02-20 05:04:49 PM +0530] undefined
+error: admin-controller [2021-02-20 05:04:49 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:04:49 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:04:49 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:04:49 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:04:49 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:04:49 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:04:49 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:04:49 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:04:49 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:04:49 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:04:49 PM +0530] undefined
+error: admin-controller [2021-02-20 05:04:49 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:04:49 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:04:49 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:04:49 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:04:49 PM +0530] undefined
+error: admin-controller [2021-02-20 05:04:49 PM +0530] undefined
+error: message-controller [2021-02-20 05:05:49 PM +0530] [{"message":"\"Title\" length must be at least 5 characters long","path":["title"],"type":"string.min","context":{"limit":5,"value":"ab","label":"Title","key":"title"}}]
+error: message-controller [2021-02-20 05:05:49 PM +0530] [{"message":"\"Message\" length must be at least 20 characters long","path":["description"],"type":"string.min","context":{"limit":20,"value":"ab","label":"Message","key":"description"}}]
+error: message-controller [2021-02-20 05:05:49 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:05:49 PM +0530] "BadRequest"
+error: message-controller [2021-02-20 05:05:49 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:05:50 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:05:50 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:05:50 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:05:51 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:05:51 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:05:51 PM +0530] undefined
+error: admin-controller [2021-02-20 05:05:51 PM +0530] undefined
+error: admin-controller [2021-02-20 05:05:51 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:05:51 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:05:51 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:05:51 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:05:51 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:05:51 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:05:51 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:05:51 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:05:51 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:05:51 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:05:51 PM +0530] undefined
+error: admin-controller [2021-02-20 05:05:51 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:05:51 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:05:51 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:05:51 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:05:51 PM +0530] undefined
+error: admin-controller [2021-02-20 05:05:51 PM +0530] undefined
+error: message-controller [2021-02-20 05:11:55 PM +0530] [{"message":"\"Title\" length must be at least 5 characters long","path":["title"],"type":"string.min","context":{"limit":5,"value":"ab","label":"Title","key":"title"}}]
+error: message-controller [2021-02-20 05:11:55 PM +0530] [{"message":"\"Message\" length must be at least 20 characters long","path":["description"],"type":"string.min","context":{"limit":20,"value":"ab","label":"Message","key":"description"}}]
+error: message-controller [2021-02-20 05:11:55 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:11:55 PM +0530] "BadRequest"
+error: message-controller [2021-02-20 05:11:55 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:11:56 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:11:56 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:11:56 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:11:56 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:11:56 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:11:56 PM +0530] undefined
+error: admin-controller [2021-02-20 05:11:56 PM +0530] undefined
+error: admin-controller [2021-02-20 05:11:56 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:11:56 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:11:56 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:11:56 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:11:56 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:11:56 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:11:56 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:11:56 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:11:56 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:11:56 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:11:56 PM +0530] undefined
+error: admin-controller [2021-02-20 05:11:56 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:11:56 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:11:57 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:11:57 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:11:57 PM +0530] undefined
+error: admin-controller [2021-02-20 05:11:57 PM +0530] undefined
+error: message-controller [2021-02-20 05:12:44 PM +0530] [{"message":"\"Title\" length must be at least 5 characters long","path":["title"],"type":"string.min","context":{"limit":5,"value":"ab","label":"Title","key":"title"}}]
+error: message-controller [2021-02-20 05:12:44 PM +0530] [{"message":"\"Message\" length must be at least 20 characters long","path":["description"],"type":"string.min","context":{"limit":20,"value":"ab","label":"Message","key":"description"}}]
+error: message-controller [2021-02-20 05:12:44 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:12:44 PM +0530] "BadRequest"
+error: message-controller [2021-02-20 05:12:44 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:12:45 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:12:45 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:12:45 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:12:46 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:12:46 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:12:46 PM +0530] undefined
+error: admin-controller [2021-02-20 05:12:46 PM +0530] undefined
+error: admin-controller [2021-02-20 05:12:46 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:12:46 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:12:46 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:12:46 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:12:46 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:12:46 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:12:46 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:12:46 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:12:46 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:12:46 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:12:46 PM +0530] undefined
+error: admin-controller [2021-02-20 05:12:46 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:12:46 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:12:46 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:12:46 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:12:46 PM +0530] undefined
+error: admin-controller [2021-02-20 05:12:46 PM +0530] undefined
+error: message-controller [2021-02-20 05:14:24 PM +0530] [{"message":"\"Title\" length must be at least 5 characters long","path":["title"],"type":"string.min","context":{"limit":5,"value":"ab","label":"Title","key":"title"}}]
+error: message-controller [2021-02-20 05:14:25 PM +0530] [{"message":"\"Message\" length must be at least 20 characters long","path":["description"],"type":"string.min","context":{"limit":20,"value":"ab","label":"Message","key":"description"}}]
+error: message-controller [2021-02-20 05:14:25 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:14:25 PM +0530] "BadRequest"
+error: message-controller [2021-02-20 05:14:25 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:14:26 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:14:26 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:14:26 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:14:26 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:14:26 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:14:26 PM +0530] undefined
+error: admin-controller [2021-02-20 05:14:26 PM +0530] undefined
+error: admin-controller [2021-02-20 05:14:26 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:14:26 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:14:26 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:14:26 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:14:26 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:14:26 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:14:26 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:14:26 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:14:26 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:14:26 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:14:26 PM +0530] undefined
+error: admin-controller [2021-02-20 05:14:26 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:14:26 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:14:26 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:14:26 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:14:26 PM +0530] undefined
+error: admin-controller [2021-02-20 05:14:26 PM +0530] undefined
+error: message-controller [2021-02-20 05:16:01 PM +0530] [{"message":"\"Title\" length must be at least 5 characters long","path":["title"],"type":"string.min","context":{"limit":5,"value":"ab","label":"Title","key":"title"}}]
+error: message-controller [2021-02-20 05:16:02 PM +0530] [{"message":"\"Message\" length must be at least 20 characters long","path":["description"],"type":"string.min","context":{"limit":20,"value":"ab","label":"Message","key":"description"}}]
+error: message-controller [2021-02-20 05:16:02 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:16:02 PM +0530] "BadRequest"
+error: message-controller [2021-02-20 05:16:02 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:16:03 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:03 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:16:03 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:16:03 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:03 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:16:03 PM +0530] undefined
+error: admin-controller [2021-02-20 05:16:03 PM +0530] undefined
+error: admin-controller [2021-02-20 05:16:03 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:03 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:03 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:03 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:03 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:03 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:03 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:03 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:16:03 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:16:03 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:16:03 PM +0530] undefined
+error: admin-controller [2021-02-20 05:16:03 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:03 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:03 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:03 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:03 PM +0530] undefined
+error: admin-controller [2021-02-20 05:16:03 PM +0530] undefined
+error: message-controller [2021-02-20 05:16:13 PM +0530] [{"message":"\"Title\" length must be at least 5 characters long","path":["title"],"type":"string.min","context":{"limit":5,"value":"ab","label":"Title","key":"title"}}]
+error: message-controller [2021-02-20 05:16:13 PM +0530] [{"message":"\"Message\" length must be at least 20 characters long","path":["description"],"type":"string.min","context":{"limit":20,"value":"ab","label":"Message","key":"description"}}]
+error: message-controller [2021-02-20 05:16:14 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:16:14 PM +0530] "BadRequest"
+error: message-controller [2021-02-20 05:16:14 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:16:14 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:15 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:16:15 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:16:15 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:15 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:16:15 PM +0530] undefined
+error: admin-controller [2021-02-20 05:16:15 PM +0530] undefined
+error: admin-controller [2021-02-20 05:16:15 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:15 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:15 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:15 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:15 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:15 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:15 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:15 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:16:15 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:16:15 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:16:15 PM +0530] undefined
+error: admin-controller [2021-02-20 05:16:15 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:15 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:15 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:15 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:15 PM +0530] undefined
+error: admin-controller [2021-02-20 05:16:15 PM +0530] undefined
+error: message-controller [2021-02-20 05:16:24 PM +0530] [{"message":"\"Title\" length must be at least 5 characters long","path":["title"],"type":"string.min","context":{"limit":5,"value":"ab","label":"Title","key":"title"}}]
+error: message-controller [2021-02-20 05:16:24 PM +0530] [{"message":"\"Message\" length must be at least 20 characters long","path":["description"],"type":"string.min","context":{"limit":20,"value":"ab","label":"Message","key":"description"}}]
+error: message-controller [2021-02-20 05:16:25 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:16:25 PM +0530] "BadRequest"
+error: message-controller [2021-02-20 05:16:25 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:16:25 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:25 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:16:26 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:16:26 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:26 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:16:26 PM +0530] undefined
+error: admin-controller [2021-02-20 05:16:26 PM +0530] undefined
+error: admin-controller [2021-02-20 05:16:26 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:26 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:26 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:26 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:26 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:26 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:26 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:26 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:16:26 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:16:26 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:16:26 PM +0530] undefined
+error: admin-controller [2021-02-20 05:16:26 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:26 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:26 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:26 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:16:26 PM +0530] undefined
+error: admin-controller [2021-02-20 05:16:26 PM +0530] undefined
+error: admin-controller [2021-02-20 05:17:11 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:17:11 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:17:11 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:17:11 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:17:11 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:17:12 PM +0530] undefined
+error: admin-controller [2021-02-20 05:17:12 PM +0530] undefined
+error: admin-controller [2021-02-20 05:17:12 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:17:12 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:17:12 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:17:12 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:17:12 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:17:12 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:17:12 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:17:12 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:17:12 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:17:12 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:17:12 PM +0530] undefined
+error: admin-controller [2021-02-20 05:17:12 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:17:12 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:17:12 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:17:12 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:17:12 PM +0530] undefined
+error: admin-controller [2021-02-20 05:17:12 PM +0530] undefined
+error: admin-controller [2021-02-20 05:17:36 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:17:36 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:17:36 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:17:36 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:17:36 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:17:36 PM +0530] undefined
+error: admin-controller [2021-02-20 05:17:36 PM +0530] undefined
+error: admin-controller [2021-02-20 05:17:36 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:17:36 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:17:36 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:17:36 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:17:36 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:17:36 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:17:36 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:17:36 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:17:36 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:17:36 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:17:36 PM +0530] undefined
+error: admin-controller [2021-02-20 05:17:37 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:17:37 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:17:37 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:17:37 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:17:37 PM +0530] undefined
+error: admin-controller [2021-02-20 05:17:37 PM +0530] undefined
+error: message-controller [2021-02-20 05:17:40 PM +0530] [{"message":"\"Title\" length must be at least 5 characters long","path":["title"],"type":"string.min","context":{"limit":5,"value":"ab","label":"Title","key":"title"}}]
+error: message-controller [2021-02-20 05:17:40 PM +0530] [{"message":"\"Message\" length must be at least 20 characters long","path":["description"],"type":"string.min","context":{"limit":20,"value":"ab","label":"Message","key":"description"}}]
+error: message-controller [2021-02-20 05:17:40 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:17:40 PM +0530] "BadRequest"
+error: message-controller [2021-02-20 05:17:40 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:18:12 PM +0530] [{"message":"\"Title\" length must be at least 5 characters long","path":["title"],"type":"string.min","context":{"limit":5,"value":"ab","label":"Title","key":"title"}}]
+error: message-controller [2021-02-20 05:18:12 PM +0530] [{"message":"\"Message\" length must be at least 20 characters long","path":["description"],"type":"string.min","context":{"limit":20,"value":"ab","label":"Message","key":"description"}}]
+error: message-controller [2021-02-20 05:18:12 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:18:12 PM +0530] "BadRequest"
+error: message-controller [2021-02-20 05:18:12 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:18:13 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:18:13 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:18:13 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:18:14 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:18:14 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:18:14 PM +0530] undefined
+error: admin-controller [2021-02-20 05:18:14 PM +0530] undefined
+error: admin-controller [2021-02-20 05:18:14 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:18:14 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:18:14 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:18:14 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:18:14 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:18:14 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:18:14 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:18:14 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:18:14 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:18:14 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:18:14 PM +0530] undefined
+error: admin-controller [2021-02-20 05:18:14 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:18:14 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:18:14 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:18:14 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:18:14 PM +0530] undefined
+error: admin-controller [2021-02-20 05:18:14 PM +0530] undefined
+error: message-controller [2021-02-20 05:18:24 PM +0530] [{"message":"\"Title\" length must be at least 5 characters long","path":["title"],"type":"string.min","context":{"limit":5,"value":"ab","label":"Title","key":"title"}}]
+error: message-controller [2021-02-20 05:18:24 PM +0530] [{"message":"\"Message\" length must be at least 20 characters long","path":["description"],"type":"string.min","context":{"limit":20,"value":"ab","label":"Message","key":"description"}}]
+error: message-controller [2021-02-20 05:18:24 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:18:24 PM +0530] "BadRequest"
+error: message-controller [2021-02-20 05:18:24 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:18:25 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:18:25 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:18:25 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:18:26 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:18:26 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:18:26 PM +0530] undefined
+error: admin-controller [2021-02-20 05:18:26 PM +0530] undefined
+error: admin-controller [2021-02-20 05:18:26 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:18:26 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:18:26 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:18:26 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:18:26 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:18:26 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:18:26 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:18:26 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:18:26 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:18:26 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:18:26 PM +0530] undefined
+error: admin-controller [2021-02-20 05:18:26 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:18:26 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:18:26 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:18:26 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:18:26 PM +0530] undefined
+error: admin-controller [2021-02-20 05:18:26 PM +0530] undefined
+error: message-controller [2021-02-20 05:27:01 PM +0530] [{"message":"\"Title\" length must be at least 5 characters long","path":["title"],"type":"string.min","context":{"limit":5,"value":"ab","label":"Title","key":"title"}}]
+error: message-controller [2021-02-20 05:27:01 PM +0530] [{"message":"\"Message\" length must be at least 20 characters long","path":["description"],"type":"string.min","context":{"limit":20,"value":"ab","label":"Message","key":"description"}}]
+error: message-controller [2021-02-20 05:27:02 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:27:02 PM +0530] "BadRequest"
+error: message-controller [2021-02-20 05:27:02 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:27:04 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:27:04 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:27:04 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:27:04 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:27:04 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:27:04 PM +0530] undefined
+error: admin-controller [2021-02-20 05:27:04 PM +0530] undefined
+error: admin-controller [2021-02-20 05:27:04 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:27:04 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:27:04 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:27:04 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:27:04 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:27:04 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:27:04 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:27:04 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:27:04 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:27:04 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:27:04 PM +0530] undefined
+error: admin-controller [2021-02-20 05:27:04 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:27:04 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:27:04 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:27:04 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:27:04 PM +0530] undefined
+error: admin-controller [2021-02-20 05:27:04 PM +0530] undefined
+error: message-controller [2021-02-20 05:29:53 PM +0530] [{"message":"\"Title\" length must be at least 5 characters long","path":["title"],"type":"string.min","context":{"limit":5,"value":"ab","label":"Title","key":"title"}}]
+error: message-controller [2021-02-20 05:29:53 PM +0530] [{"message":"\"Message\" length must be at least 20 characters long","path":["description"],"type":"string.min","context":{"limit":20,"value":"ab","label":"Message","key":"description"}}]
+error: message-controller [2021-02-20 05:29:53 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:29:53 PM +0530] "BadRequest"
+error: message-controller [2021-02-20 05:29:53 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:29:54 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:29:54 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:29:54 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:29:54 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:29:54 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:29:54 PM +0530] undefined
+error: admin-controller [2021-02-20 05:29:54 PM +0530] undefined
+error: admin-controller [2021-02-20 05:29:54 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:29:54 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:29:54 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:29:54 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:29:54 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:29:54 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:29:54 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:29:54 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:29:54 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:29:54 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:29:54 PM +0530] undefined
+error: admin-controller [2021-02-20 05:29:54 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:29:54 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:29:55 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:29:55 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:29:55 PM +0530] undefined
+error: admin-controller [2021-02-20 05:29:55 PM +0530] undefined
+error: message-controller [2021-02-20 05:31:50 PM +0530] [{"message":"\"Title\" length must be at least 5 characters long","path":["title"],"type":"string.min","context":{"limit":5,"value":"ab","label":"Title","key":"title"}}]
+error: message-controller [2021-02-20 05:31:50 PM +0530] [{"message":"\"Message\" length must be at least 20 characters long","path":["description"],"type":"string.min","context":{"limit":20,"value":"ab","label":"Message","key":"description"}}]
+error: message-controller [2021-02-20 05:31:50 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:31:50 PM +0530] "BadRequest"
+error: message-controller [2021-02-20 05:31:50 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:31:51 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:31:51 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:31:51 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:31:51 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:31:51 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:31:51 PM +0530] undefined
+error: admin-controller [2021-02-20 05:31:51 PM +0530] undefined
+error: admin-controller [2021-02-20 05:31:51 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:31:51 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:31:51 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:31:51 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:31:51 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:31:51 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:31:51 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:31:51 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:31:51 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:31:51 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:31:52 PM +0530] undefined
+error: admin-controller [2021-02-20 05:31:52 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:31:52 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:31:52 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:31:52 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:31:52 PM +0530] undefined
+error: admin-controller [2021-02-20 05:31:52 PM +0530] undefined
+error: message-controller [2021-02-20 05:34:23 PM +0530] [{"message":"\"Title\" length must be at least 5 characters long","path":["title"],"type":"string.min","context":{"limit":5,"value":"ab","label":"Title","key":"title"}}]
+error: message-controller [2021-02-20 05:34:23 PM +0530] [{"message":"\"Message\" length must be at least 20 characters long","path":["description"],"type":"string.min","context":{"limit":20,"value":"ab","label":"Message","key":"description"}}]
+error: message-controller [2021-02-20 05:34:23 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:34:23 PM +0530] "BadRequest"
+error: message-controller [2021-02-20 05:34:23 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:34:24 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:34:24 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:34:24 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:34:25 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:34:25 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:34:25 PM +0530] undefined
+error: admin-controller [2021-02-20 05:34:25 PM +0530] undefined
+error: admin-controller [2021-02-20 05:34:25 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:34:25 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:34:25 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:34:25 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:34:25 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:34:25 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:34:25 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:34:25 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:34:25 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:34:25 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:34:25 PM +0530] undefined
+error: admin-controller [2021-02-20 05:34:25 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:34:25 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:34:25 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:34:25 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:34:25 PM +0530] undefined
+error: admin-controller [2021-02-20 05:34:25 PM +0530] undefined
+error: message-controller [2021-02-20 05:35:42 PM +0530] [{"message":"\"Title\" length must be at least 5 characters long","path":["title"],"type":"string.min","context":{"limit":5,"value":"ab","label":"Title","key":"title"}}]
+error: message-controller [2021-02-20 05:35:43 PM +0530] [{"message":"\"Message\" length must be at least 20 characters long","path":["description"],"type":"string.min","context":{"limit":20,"value":"ab","label":"Message","key":"description"}}]
+error: message-controller [2021-02-20 05:35:43 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:35:43 PM +0530] "BadRequest"
+error: message-controller [2021-02-20 05:35:43 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:35:44 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:35:44 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:35:44 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:35:44 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:35:44 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:35:44 PM +0530] undefined
+error: admin-controller [2021-02-20 05:35:44 PM +0530] undefined
+error: admin-controller [2021-02-20 05:35:44 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:35:44 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:35:44 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:35:44 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:35:44 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:35:44 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:35:44 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:35:44 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:35:44 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:35:44 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:35:44 PM +0530] undefined
+error: admin-controller [2021-02-20 05:35:44 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:35:44 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:35:44 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:35:44 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:35:44 PM +0530] undefined
+error: admin-controller [2021-02-20 05:35:44 PM +0530] undefined
+error: message-controller [2021-02-20 05:37:04 PM +0530] [{"message":"\"Title\" length must be at least 5 characters long","path":["title"],"type":"string.min","context":{"limit":5,"value":"ab","label":"Title","key":"title"}}]
+error: message-controller [2021-02-20 05:37:04 PM +0530] [{"message":"\"Message\" length must be at least 20 characters long","path":["description"],"type":"string.min","context":{"limit":20,"value":"ab","label":"Message","key":"description"}}]
+error: message-controller [2021-02-20 05:37:04 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:37:04 PM +0530] "BadRequest"
+error: message-controller [2021-02-20 05:37:04 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:37:05 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:37:05 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:37:05 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:37:05 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:37:05 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:37:05 PM +0530] undefined
+error: admin-controller [2021-02-20 05:37:05 PM +0530] undefined
+error: admin-controller [2021-02-20 05:37:05 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:37:05 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:37:05 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:37:05 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:37:05 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:37:05 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:37:05 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:37:05 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:37:05 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:37:05 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:37:05 PM +0530] undefined
+error: admin-controller [2021-02-20 05:37:06 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:37:06 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:37:06 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:37:06 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:37:06 PM +0530] undefined
+error: admin-controller [2021-02-20 05:37:06 PM +0530] undefined
+error: message-controller [2021-02-20 05:37:42 PM +0530] [{"message":"\"Title\" length must be at least 5 characters long","path":["title"],"type":"string.min","context":{"limit":5,"value":"ab","label":"Title","key":"title"}}]
+error: message-controller [2021-02-20 05:37:42 PM +0530] [{"message":"\"Message\" length must be at least 20 characters long","path":["description"],"type":"string.min","context":{"limit":20,"value":"ab","label":"Message","key":"description"}}]
+error: message-controller [2021-02-20 05:37:42 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:37:42 PM +0530] "BadRequest"
+error: message-controller [2021-02-20 05:37:42 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:37:43 PM +0530] undefined
+error: admin-controller [2021-02-20 05:37:43 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:37:43 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:37:44 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:37:44 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:37:44 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:37:44 PM +0530] undefined
+error: admin-controller [2021-02-20 05:37:44 PM +0530] undefined
+error: admin-controller [2021-02-20 05:37:44 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:37:44 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:37:44 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:37:44 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:37:44 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:37:44 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:37:44 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:37:44 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:37:44 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:37:44 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:37:44 PM +0530] undefined
+error: admin-controller [2021-02-20 05:37:44 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:37:44 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:37:44 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:37:44 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:37:44 PM +0530] undefined
+error: admin-controller [2021-02-20 05:37:44 PM +0530] undefined
+error: message-controller [2021-02-20 05:40:04 PM +0530] [{"message":"\"Title\" length must be at least 5 characters long","path":["title"],"type":"string.min","context":{"limit":5,"value":"ab","label":"Title","key":"title"}}]
+error: message-controller [2021-02-20 05:40:04 PM +0530] [{"message":"\"Message\" length must be at least 20 characters long","path":["description"],"type":"string.min","context":{"limit":20,"value":"ab","label":"Message","key":"description"}}]
+error: message-controller [2021-02-20 05:40:04 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:40:04 PM +0530] "BadRequest"
+error: message-controller [2021-02-20 05:40:04 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:40:04 PM +0530] undefined
+error: message-controller [2021-02-20 05:40:04 PM +0530] undefined
+error: admin-controller [2021-02-20 05:40:05 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:40:05 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:40:05 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:40:05 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:40:05 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:40:05 PM +0530] undefined
+error: admin-controller [2021-02-20 05:40:05 PM +0530] undefined
+error: admin-controller [2021-02-20 05:40:05 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:40:05 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:40:05 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:40:05 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:40:05 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:40:05 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:40:05 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:40:05 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:40:05 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:40:05 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:40:05 PM +0530] undefined
+error: admin-controller [2021-02-20 05:40:06 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:40:06 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:40:06 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:40:06 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:40:06 PM +0530] undefined
+error: admin-controller [2021-02-20 05:40:06 PM +0530] undefined
+error: message-controller [2021-02-20 05:41:58 PM +0530] [{"message":"\"Title\" length must be at least 5 characters long","path":["title"],"type":"string.min","context":{"limit":5,"value":"ab","label":"Title","key":"title"}}]
+error: message-controller [2021-02-20 05:41:58 PM +0530] [{"message":"\"Message\" length must be at least 20 characters long","path":["description"],"type":"string.min","context":{"limit":20,"value":"ab","label":"Message","key":"description"}}]
+error: message-controller [2021-02-20 05:41:58 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:41:58 PM +0530] "BadRequest"
+error: message-controller [2021-02-20 05:41:58 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:41:58 PM +0530] undefined
+error: message-controller [2021-02-20 05:41:58 PM +0530] undefined
+error: message-controller [2021-02-20 05:41:58 PM +0530] undefined
+error: admin-controller [2021-02-20 05:41:59 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:41:59 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:41:59 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:42:00 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:42:00 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:42:00 PM +0530] undefined
+error: admin-controller [2021-02-20 05:42:00 PM +0530] undefined
+error: admin-controller [2021-02-20 05:42:00 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:42:00 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:42:00 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:42:00 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:42:00 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:42:00 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:42:00 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:42:00 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:42:00 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:42:00 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:42:00 PM +0530] undefined
+error: admin-controller [2021-02-20 05:42:00 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:42:00 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:42:00 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:42:00 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:42:00 PM +0530] undefined
+error: admin-controller [2021-02-20 05:42:00 PM +0530] undefined
+error: message-controller [2021-02-20 05:43:46 PM +0530] [{"message":"\"Title\" length must be at least 5 characters long","path":["title"],"type":"string.min","context":{"limit":5,"value":"ab","label":"Title","key":"title"}}]
+error: message-controller [2021-02-20 05:43:46 PM +0530] [{"message":"\"Message\" length must be at least 20 characters long","path":["description"],"type":"string.min","context":{"limit":20,"value":"ab","label":"Message","key":"description"}}]
+error: message-controller [2021-02-20 05:43:47 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:43:47 PM +0530] "BadRequest"
+error: message-controller [2021-02-20 05:43:47 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:43:47 PM +0530] undefined
+error: message-controller [2021-02-20 05:43:47 PM +0530] undefined
+error: message-controller [2021-02-20 05:43:47 PM +0530] undefined
+error: message-controller [2021-02-20 05:43:47 PM +0530] undefined
+error: admin-controller [2021-02-20 05:43:48 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:43:48 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:43:48 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:43:48 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:43:48 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:43:48 PM +0530] undefined
+error: admin-controller [2021-02-20 05:43:48 PM +0530] undefined
+error: admin-controller [2021-02-20 05:43:48 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:43:48 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:43:48 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:43:48 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:43:48 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:43:48 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:43:48 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:43:48 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:43:48 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:43:48 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:43:48 PM +0530] undefined
+error: admin-controller [2021-02-20 05:43:48 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:43:48 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:43:48 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:43:48 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:43:48 PM +0530] undefined
+error: admin-controller [2021-02-20 05:43:48 PM +0530] undefined
+error: message-controller [2021-02-20 05:51:19 PM +0530] [{"message":"\"Title\" length must be at least 5 characters long","path":["title"],"type":"string.min","context":{"limit":5,"value":"ab","label":"Title","key":"title"}}]
+error: message-controller [2021-02-20 05:51:19 PM +0530] [{"message":"\"Message\" length must be at least 20 characters long","path":["description"],"type":"string.min","context":{"limit":20,"value":"ab","label":"Message","key":"description"}}]
+error: message-controller [2021-02-20 05:51:19 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:51:19 PM +0530] "BadRequest"
+error: message-controller [2021-02-20 05:51:19 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:51:19 PM +0530] undefined
+error: message-controller [2021-02-20 05:51:19 PM +0530] undefined
+error: message-controller [2021-02-20 05:51:19 PM +0530] undefined
+error: message-controller [2021-02-20 05:51:19 PM +0530] undefined
+error: admin-controller [2021-02-20 05:51:20 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:51:21 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:51:21 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:51:21 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:51:21 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:51:21 PM +0530] undefined
+error: admin-controller [2021-02-20 05:51:21 PM +0530] undefined
+error: admin-controller [2021-02-20 05:51:21 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:51:21 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:51:21 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:51:21 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:51:21 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:51:21 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:51:21 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:51:21 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:51:21 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:51:21 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:51:21 PM +0530] undefined
+error: admin-controller [2021-02-20 05:51:21 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:51:21 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:51:21 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:51:21 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:51:21 PM +0530] undefined
+error: admin-controller [2021-02-20 05:51:21 PM +0530] undefined
+error: message-controller [2021-02-20 05:51:54 PM +0530] [{"message":"\"Title\" length must be at least 5 characters long","path":["title"],"type":"string.min","context":{"limit":5,"value":"ab","label":"Title","key":"title"}}]
+error: message-controller [2021-02-20 05:51:54 PM +0530] [{"message":"\"Message\" length must be at least 20 characters long","path":["description"],"type":"string.min","context":{"limit":20,"value":"ab","label":"Message","key":"description"}}]
+error: message-controller [2021-02-20 05:51:54 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:51:54 PM +0530] "BadRequest"
+error: message-controller [2021-02-20 05:51:54 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:51:54 PM +0530] undefined
+error: message-controller [2021-02-20 05:51:54 PM +0530] undefined
+error: message-controller [2021-02-20 05:51:54 PM +0530] undefined
+error: message-controller [2021-02-20 05:51:54 PM +0530] undefined
+error: admin-controller [2021-02-20 05:51:55 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:51:55 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:51:55 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:51:55 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:51:55 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:51:55 PM +0530] undefined
+error: admin-controller [2021-02-20 05:51:55 PM +0530] undefined
+error: admin-controller [2021-02-20 05:51:55 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:51:55 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:51:55 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:51:55 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:51:55 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:51:55 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:51:55 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:51:55 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:51:55 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:51:55 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:51:55 PM +0530] undefined
+error: admin-controller [2021-02-20 05:51:56 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:51:56 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:51:56 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:51:56 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:51:56 PM +0530] undefined
+error: admin-controller [2021-02-20 05:51:56 PM +0530] undefined
+error: message-controller [2021-02-20 05:54:31 PM +0530] [{"message":"\"Title\" length must be at least 5 characters long","path":["title"],"type":"string.min","context":{"limit":5,"value":"ab","label":"Title","key":"title"}}]
+error: message-controller [2021-02-20 05:54:31 PM +0530] [{"message":"\"Message\" length must be at least 20 characters long","path":["description"],"type":"string.min","context":{"limit":20,"value":"ab","label":"Message","key":"description"}}]
+error: message-controller [2021-02-20 05:54:31 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:54:31 PM +0530] "BadRequest"
+error: message-controller [2021-02-20 05:54:31 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:54:31 PM +0530] undefined
+error: message-controller [2021-02-20 05:54:31 PM +0530] undefined
+error: message-controller [2021-02-20 05:54:31 PM +0530] undefined
+error: message-controller [2021-02-20 05:54:31 PM +0530] undefined
+error: message-controller [2021-02-20 05:54:31 PM +0530] undefined
+error: admin-controller [2021-02-20 05:54:32 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:54:32 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:54:32 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:54:33 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:54:33 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:54:33 PM +0530] undefined
+error: admin-controller [2021-02-20 05:54:33 PM +0530] undefined
+error: admin-controller [2021-02-20 05:54:33 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:54:33 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:54:33 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:54:33 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:54:33 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:54:33 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:54:33 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:54:33 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:54:33 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:54:33 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:54:33 PM +0530] undefined
+error: admin-controller [2021-02-20 05:54:33 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:54:33 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:54:33 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:54:33 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:54:33 PM +0530] undefined
+error: admin-controller [2021-02-20 05:54:33 PM +0530] undefined
+error: message-controller [2021-02-20 05:55:25 PM +0530] [{"message":"\"Title\" length must be at least 5 characters long","path":["title"],"type":"string.min","context":{"limit":5,"value":"ab","label":"Title","key":"title"}}]
+error: message-controller [2021-02-20 05:55:26 PM +0530] [{"message":"\"Message\" length must be at least 20 characters long","path":["description"],"type":"string.min","context":{"limit":20,"value":"ab","label":"Message","key":"description"}}]
+error: message-controller [2021-02-20 05:55:26 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:55:26 PM +0530] "BadRequest"
+error: message-controller [2021-02-20 05:55:26 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:55:26 PM +0530] undefined
+error: message-controller [2021-02-20 05:55:26 PM +0530] undefined
+error: message-controller [2021-02-20 05:55:26 PM +0530] undefined
+error: message-controller [2021-02-20 05:55:26 PM +0530] undefined
+error: admin-controller [2021-02-20 05:55:27 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:55:27 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:55:27 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:55:27 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:55:27 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:55:27 PM +0530] undefined
+error: admin-controller [2021-02-20 05:55:27 PM +0530] undefined
+error: admin-controller [2021-02-20 05:55:27 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:55:27 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:55:27 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:55:27 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:55:27 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:55:27 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:55:27 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:55:27 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:55:27 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:55:27 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:55:27 PM +0530] undefined
+error: admin-controller [2021-02-20 05:55:27 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:55:27 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:55:27 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:55:27 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:55:27 PM +0530] undefined
+error: admin-controller [2021-02-20 05:55:27 PM +0530] undefined
+error: message-controller [2021-02-20 05:56:34 PM +0530] [{"message":"\"Title\" length must be at least 5 characters long","path":["title"],"type":"string.min","context":{"limit":5,"value":"ab","label":"Title","key":"title"}}]
+error: message-controller [2021-02-20 05:56:34 PM +0530] [{"message":"\"Message\" length must be at least 20 characters long","path":["description"],"type":"string.min","context":{"limit":20,"value":"ab","label":"Message","key":"description"}}]
+error: message-controller [2021-02-20 05:56:35 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:56:35 PM +0530] "BadRequest"
+error: message-controller [2021-02-20 05:56:35 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:56:35 PM +0530] undefined
+error: message-controller [2021-02-20 05:56:35 PM +0530] undefined
+error: message-controller [2021-02-20 05:56:35 PM +0530] undefined
+error: message-controller [2021-02-20 05:56:35 PM +0530] undefined
+error: admin-controller [2021-02-20 05:56:36 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:56:36 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:56:36 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:56:36 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:56:36 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:56:36 PM +0530] undefined
+error: admin-controller [2021-02-20 05:56:36 PM +0530] undefined
+error: admin-controller [2021-02-20 05:56:36 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:56:36 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:56:36 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:56:36 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:56:36 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:56:36 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:56:36 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:56:36 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:56:36 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:56:36 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:56:36 PM +0530] undefined
+error: admin-controller [2021-02-20 05:56:37 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:56:37 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:56:37 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:56:37 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:56:37 PM +0530] undefined
+error: admin-controller [2021-02-20 05:56:37 PM +0530] undefined
+error: message-controller [2021-02-20 05:57:52 PM +0530] [{"message":"\"Title\" length must be at least 5 characters long","path":["title"],"type":"string.min","context":{"limit":5,"value":"ab","label":"Title","key":"title"}}]
+error: message-controller [2021-02-20 05:57:53 PM +0530] [{"message":"\"Message\" length must be at least 20 characters long","path":["description"],"type":"string.min","context":{"limit":20,"value":"ab","label":"Message","key":"description"}}]
+error: message-controller [2021-02-20 05:57:53 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:57:53 PM +0530] "BadRequest"
+error: message-controller [2021-02-20 05:57:53 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 05:57:53 PM +0530] undefined
+error: message-controller [2021-02-20 05:57:53 PM +0530] undefined
+error: message-controller [2021-02-20 05:57:53 PM +0530] undefined
+error: message-controller [2021-02-20 05:57:53 PM +0530] undefined
+error: admin-controller [2021-02-20 05:57:54 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:57:54 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 05:57:54 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:57:54 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:57:54 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 05:57:54 PM +0530] undefined
+error: admin-controller [2021-02-20 05:57:54 PM +0530] undefined
+error: admin-controller [2021-02-20 05:57:54 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:57:54 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:57:54 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:57:54 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:57:54 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:57:54 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:57:54 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:57:54 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:57:54 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:57:54 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 05:57:54 PM +0530] undefined
+error: admin-controller [2021-02-20 05:57:54 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:57:54 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:57:54 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:57:54 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 05:57:54 PM +0530] undefined
+error: admin-controller [2021-02-20 05:57:54 PM +0530] undefined
+error: message-controller [2021-02-20 06:00:57 PM +0530] [{"message":"\"Title\" length must be at least 5 characters long","path":["title"],"type":"string.min","context":{"limit":5,"value":"ab","label":"Title","key":"title"}}]
+error: message-controller [2021-02-20 06:00:57 PM +0530] [{"message":"\"Message\" length must be at least 20 characters long","path":["description"],"type":"string.min","context":{"limit":20,"value":"ab","label":"Message","key":"description"}}]
+error: message-controller [2021-02-20 06:00:57 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 06:00:57 PM +0530] "BadRequest"
+error: message-controller [2021-02-20 06:00:57 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 06:00:57 PM +0530] undefined
+error: message-controller [2021-02-20 06:00:57 PM +0530] undefined
+error: message-controller [2021-02-20 06:00:57 PM +0530] undefined
+error: message-controller [2021-02-20 06:00:57 PM +0530] undefined
+error: admin-controller [2021-02-20 06:00:58 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 06:00:58 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 06:00:58 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 06:00:58 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 06:00:58 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 06:00:58 PM +0530] undefined
+error: admin-controller [2021-02-20 06:00:58 PM +0530] undefined
+error: admin-controller [2021-02-20 06:00:58 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 06:00:58 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 06:00:58 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 06:00:58 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 06:00:58 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 06:00:58 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 06:00:58 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 06:00:58 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 06:00:58 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 06:00:58 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 06:00:58 PM +0530] undefined
+error: admin-controller [2021-02-20 06:00:59 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 06:00:59 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 06:00:59 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 06:00:59 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 06:00:59 PM +0530] undefined
+error: admin-controller [2021-02-20 06:00:59 PM +0530] undefined
+error: message-controller [2021-02-20 06:01:47 PM +0530] [{"message":"\"Title\" length must be at least 5 characters long","path":["title"],"type":"string.min","context":{"limit":5,"value":"ab","label":"Title","key":"title"}}]
+error: message-controller [2021-02-20 06:01:48 PM +0530] [{"message":"\"Message\" length must be at least 20 characters long","path":["description"],"type":"string.min","context":{"limit":20,"value":"ab","label":"Message","key":"description"}}]
+error: message-controller [2021-02-20 06:01:48 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 06:01:48 PM +0530] "BadRequest"
+error: message-controller [2021-02-20 06:01:48 PM +0530] "Unauthorized"
+error: message-controller [2021-02-20 06:01:48 PM +0530] undefined
+error: message-controller [2021-02-20 06:01:48 PM +0530] undefined
+error: message-controller [2021-02-20 06:01:48 PM +0530] undefined
+error: message-controller [2021-02-20 06:01:48 PM +0530] undefined
+error: admin-controller [2021-02-20 06:01:49 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 06:01:49 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-20 06:01:50 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 06:01:50 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 06:01:50 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-20 06:01:50 PM +0530] undefined
+error: admin-controller [2021-02-20 06:01:50 PM +0530] undefined
+error: admin-controller [2021-02-20 06:01:50 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 06:01:50 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 06:01:50 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 06:01:50 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 06:01:50 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 06:01:50 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 06:01:50 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 06:01:50 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 06:01:50 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 06:01:50 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-20 06:01:50 PM +0530] undefined
+error: admin-controller [2021-02-20 06:01:50 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 06:01:50 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 06:01:50 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 06:01:50 PM +0530] "BadRequest"
+error: admin-controller [2021-02-20 06:01:50 PM +0530] undefined
+error: admin-controller [2021-02-20 06:01:50 PM +0530] undefined
