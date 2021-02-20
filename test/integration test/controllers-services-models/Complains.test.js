@@ -109,7 +109,11 @@ describe('Complains Controller', () => {
                 error:"Error Checking",
                 success:"Success Message",
                 user:{uid:1},
-                complains:expect.any(Array)
+                complains: expect.arrayContaining([expect.objectContaining({
+                    comp_id:'00000000-0000-4111-8000-000000000000',
+                }),expect.objectContaining({
+                    comp_id:'00000000-0000-4222-8000-000000000000',
+                })])
     
             });
         });
