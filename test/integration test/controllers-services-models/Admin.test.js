@@ -374,20 +374,19 @@ describe('Admin Controller', () => {
         });
         it('should render adminStatsPage with stats_obj as data from DB',async()=>{
             await AdminController.statsPage(req,res);
-            expect(res.render).toHaveBeenCalledWith('adminStatsPage',expect.objectContaining({
+            expect(res.render).toHaveBeenCalledWith("adminStatsPage", expect.objectContaining({
+                error:{},
+                user:{type:'admin'},
                 stats:expect.objectContaining({
-                    num_buyers:expect.any(Array),
-                    num_farmers:expect.any(Array),
-                    num_active_posts:expect.any(Array),
-                    num_expired_posts:expect.any(Array),
-                    num_sold_posts:expect.any(Array),
-                    num_buyer_reqs:expect.any(Array),
-                    num_complains:expect.any(Array),
-                }),
-                user:expect.objectContaining({
-                    type:expect.any(String)
+                    num_active_posts: expect.arrayContaining([{count: 2}]),
+                    num_buyer_reqs: expect.arrayContaining([{count: 4}]),
+                    num_buyers: expect.arrayContaining([{count: 2}]),
+                    num_complains: expect.arrayContaining([{count: 2}]),
+                    num_expired_posts: expect.arrayContaining([{count: 1}]),
+                    num_farmers: expect.arrayContaining([{count: 2}]),
+                    num_sold_posts: expect.arrayContaining([{count: 1}])
                 })
-            }));
+            }) );
         });
         it('should redirect to admin home in case of error',async()=>{
             req.session=null;
@@ -473,9 +472,17 @@ describe('Admin Controller', () => {
                 error:expect.any(String),
                 success:expect.any(String),
                 user: expect.any(Object),
-                activePosts: expect.any(Array),
-                soldPosts: expect.any(Array),
-                expiredPosts: expect.any(Array),
+                activePosts: expect.arrayContaining([expect.objectContaining({
+                    post_id:'10000000-0000-4000-8000-000000000000',
+                }),expect.objectContaining({
+                    post_id:'20000000-0000-4000-8000-000000000000',
+                })]),
+                soldPosts: expect.arrayContaining([expect.objectContaining({
+                    post_id:'40000000-0000-4000-8000-000000000000',
+                })]),
+                expiredPosts: expect.arrayContaining([expect.objectContaining({
+                    post_id:'30000000-0000-4000-8000-000000000000',
+                })]),
             }));
         });
         it('should redirect to admin if error', async () => {
@@ -497,18 +504,24 @@ describe('Admin Controller', () => {
             expect(res.json).toHaveBeenCalledWith(expect.objectContaining({
                 success:true,
                 type:'nic',
-                farmers:expect.any(Array),
-                buyers:expect.any(Array),
+                farmers:expect.arrayContaining([
+                    expect.objectContaining({uid:'00000000-0000-4000-8000-000000000002'}),
+                    expect.objectContaining({uid:'00000000-0000-4000-8000-000000000003'})
+                ]),
+                buyers:expect.arrayContaining([
+                    expect.objectContaining({uid:'00000000-0000-4000-8000-000000000004'}),
+                    expect.objectContaining({uid:'00000000-0000-4000-8000-000000000005'})
+                ]),
             }));
         });
         it('should return a json object with type name and success set to true if query was made using letters not regex /[0-9]/g', async () => {
-            req.query.query='Avi'
+            req.query.query='testFirstNameB'
             await AdminController.search(req,res)
-            expect(res.json).toHaveBeenCalledWith(expect.objectContaining({
-                success:true,
-                type:'name',
-                users:expect.any(Array),
-            }));
+            expect(res.json).toHaveBeenCalledWith({
+                success: true,
+                type: "name",
+                users: expect.arrayContaining([expect.objectContaining({uid:'00000000-0000-4000-8000-000000000002'})])
+            });
         });
         it('should return a json with success false if error occurs', async () => {
             req.query=null
