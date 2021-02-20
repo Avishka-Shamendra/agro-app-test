@@ -164,7 +164,14 @@ describe('Admin Controller', () => {
         it('should render adminFarmers Page if no error',async ()=>{
             await AdminController.allFarmersPage(req,res);
             expect(res.render).toHaveBeenCalledWith('adminFarmersPage',expect.objectContaining({
-                farmers: expect.any(Array),
+                farmers: expect.arrayContaining([
+                    expect.objectContaining({
+                        uid:'00000000-0000-4000-8000-000000000002'
+                    }),
+                    expect.objectContaining({
+                        uid:'00000000-0000-4000-8000-000000000003'
+                    }),
+                ]),
             }));
         });
         it('should redirect to admin home in case of error',async ()=>{
@@ -184,7 +191,14 @@ describe('Admin Controller', () => {
         it('should render adminBuyers Page if no error',async ()=>{
             await AdminController.allBuyersPage(req,res);
             expect(res.render).toHaveBeenCalledWith('adminBuyersPage',expect.objectContaining({
-                buyers: expect.any(Array),
+                buyers: expect.arrayContaining([
+                    expect.objectContaining({
+                        uid:'00000000-0000-4000-8000-000000000004'
+                    }),
+                    expect.objectContaining({
+                        uid:'00000000-0000-4000-8000-000000000005'
+                    }),
+                ]),
             }));
         });
         it('should redirect to admin home in case of error',async ()=>{
@@ -379,7 +393,7 @@ describe('Admin Controller', () => {
                 user:{type:'admin'},
                 stats:expect.objectContaining({
                     num_active_posts: expect.arrayContaining([{count: 2}]),
-                    num_buyer_reqs: expect.arrayContaining([{count: 4}]),
+                    num_buyer_reqs: expect.arrayContaining([{count: 6}]),
                     num_buyers: expect.arrayContaining([{count: 2}]),
                     num_complains: expect.arrayContaining([{count: 2}]),
                     num_expired_posts: expect.arrayContaining([{count: 1}]),
