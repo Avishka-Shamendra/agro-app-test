@@ -24,7 +24,7 @@ class RootController {
             logger.error(e);
             res.render('index',
             {
-                error: e,
+                error: "dcdd",
                 user: req.session.user,
                 posts:null,
              }); 

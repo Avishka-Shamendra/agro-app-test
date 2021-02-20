@@ -7,6 +7,11 @@ INSERT INTO UserInfo (uid,email, type, password, first_name,last_name,gender) VA
 INSERT INTO UserInfo (uid,email, type, password, first_name,last_name,gender) VALUES ('00000000-0000-4000-8000-000000000004','test4@gmail.com','buyer','$2b$10$PtqGLU4vwx03Ln6gGc32z.OpXa/uJRhNIXkVSFjeDn9grElRlpx1e','testFirstName4','testlastName4','Male');
 INSERT INTO UserInfo (uid,email, type, password, first_name,last_name,gender) VALUES ('00000000-0000-4000-8000-000000000005','test5@gmail.com','buyer','$2b$10$PtqGLU4vwx03Ln6gGc32z.OpXa/uJRhNIXkVSFjeDn9grElRlpx1e','testFirstName5','testlastName5','Male');
 
+-- banned user insert
+INSERT INTO UserInfo (uid,email, type, password, first_name,last_name,gender,banned) VALUES ('00000000-0000-4000-8000-000000000006','test6@gmail.com','buyer','$2b$10$PtqGLU4vwx03Ln6gGc32z.OpXa/uJRhNIXkVSFjeDn9grElRlpx1e','testFirstName6','testlastName6','Male','true');
+-- user with password 6 charactors long
+INSERT INTO UserInfo (uid,email, type, password, first_name,last_name,gender) VALUES ('00000000-0000-4000-8000-000000000007','test7@gmail.com','buyer','$2b$10$dJOQi73zTgi.tWOMK57yVeQOOtqCuLUcfREUKTiSMwwLUtGqK/A8K','testFirstName7','testlastName7','Male');
+
 
 INSERT INTO Farmer VALUES ('00000000-0000-4000-8000-000000000002','981000200V','0777000002','Gampaha','address2');
 INSERT INTO Farmer VALUES ('00000000-0000-4000-8000-000000000003','981000300V','0777000003','Colombo','address3');
