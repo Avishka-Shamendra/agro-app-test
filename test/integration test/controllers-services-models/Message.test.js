@@ -148,30 +148,21 @@ describe('Message Controller', () => {
     })
 
     describe("adminMessagesPage Method",()=>{
-        it('should render adminBuyerRequestPage page with error',async ()=>{
+        it('should render adminBuyerRequest Page with all requests',async ()=>{
             const req={
-                query:{error:'test error'},
+                query:{error:'test error', success:'test success'},
                 session:{user:{uid:1}},
             }
             await MessageController.adminMessagesPage(req,res);
             expect(res.render).toHaveBeenCalledWith('adminBuyerRequestPage',{
                 error:"test error",
+                success:'test success',
                 user:{uid:1},
-                requests:expect.any(Array)
-    
-            });
-        })
-
-        it('should render adminBuyerRequestPage page with success message',async ()=>{
-            const req={
-                query:{success:'test success'},
-                session:{user:{uid:1}},
-            }
-            await MessageController.adminMessagesPage(req,res);
-            expect(res.render).toHaveBeenCalledWith('adminBuyerRequestPage',{
-                success:"test success",
-                user:{uid:1},
-                requests:expect.any(Array)
+                requests: expect.arrayContaining([expect.objectContaining({
+                    req_msg_id:'11111111-0000-4000-8000-000000000000',
+                }),expect.objectContaining({
+                    req_msg_id:'22222222-0000-4000-8000-000000000000',
+                })])
     
             });
         })
