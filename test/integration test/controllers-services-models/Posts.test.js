@@ -247,9 +247,78 @@ describe('Post Controller', () => {
         });
         it('should redirect to "/admin/allPosts" with error message if req error', async () => {
             req.params=null;
+           await PostController.deletePostAdmin(req,res);
+            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]admin[/]allPosts[?]error=/));
+
+        });
+    });
+    describe('deleteFarmerPostAdmin Method', () => {
+        let req;
+        beforeEach(() => {
+            req={
+                params:{post_id:''}
+            }
+        });
+        it('should delete the post and redirect to "/admin/allFarmers" with success message', async () => {
+            await sql`INSERT INTO Post VALUES('99000000-0000-4000-8000-000000000000','00000000-0000-4000-8000-000000000002','Test Product99','Test Post 1','Descriiption99','vegetable',100,100,'Colombo','Address99','0777100000','Active',NOW()::DATE,NOW()::DATE + INTERVAL '30 days',false)`
+            req.params.post_id='99000000-0000-4000-8000-000000000000';
+            await PostController.deleteFarmerPostAdmin(req,res)
+            const [result] = await sql`SELECT * FROM Post WHERE post_id='99000000-0000-4000-8000-000000000000'`;
+            expect(res.redirect).toHaveBeenCalledWith(`/admin/allFarmers?success=Post Deleted Successfully`);
+            expect(result).toBeFalsy();
+        });
+        it('should redirect to "/admin/allFarmers" with error message if req error', async () => {
+            req.params=null;
            await PostController.deleteFarmerPostAdmin(req,res);
             expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]admin[/]allFarmers[?]error=/));
 
+        });
+    });
+    describe('markAsSold Method', () => {
+        let req;
+        beforeEach(() => {
+            req={
+                params:{post_id:''}
+            }
+        });
+        it('should change the status of post to "Sold" and redirect to "/farmer/myPosts" with success if no error', async () => {
+            await sql`INSERT INTO Post VALUES('99000000-0000-4000-8000-000000000000','00000000-0000-4000-8000-000000000002','Test Product99','Test Post 1','Descriiption99','vegetable',100,100,'Colombo','Address99','0777100000','Active',NOW()::DATE,NOW()::DATE + INTERVAL '30 days',false)`
+            req.params.post_id='99000000-0000-4000-8000-000000000000';
+            await PostController.markAsSold(req,res)
+            const [result] = await sql`DELETE FROM Post WHERE post_id='99000000-0000-4000-8000-000000000000' RETURNING *`;
+            expect(res.redirect).toHaveBeenCalledWith(`/farmer/post/99000000-0000-4000-8000-000000000000?success=Post State changed to SOLD.`);
+            expect(result.status).toBe('Sold');
+        });
+        it('should redirect to "/farmer/myPosts" with error message if req error', async () => {
+            req.params=null;
+           await PostController.markAsSold(req,res);
+            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]farmer[/]myPosts[?]error=/));
+        });
+    });
+    describe('deletePostFarmer Method', () => {
+        let req;
+        beforeEach(() => {
+            req={
+                params:{post_id:''}
+            }
+        });
+        it('should delete the post and redirect to "/farmer/myPosts" with success if no error', async () => {
+            await sql`INSERT INTO Post VALUES('99000000-0000-4000-8000-000000000000','00000000-0000-4000-8000-000000000002','Test Product99','Test Post 1','Descriiption99','vegetable',100,100,'Colombo','Address99','0777100000','Active',NOW()::DATE,NOW()::DATE + INTERVAL '30 days',false)`
+            req.params.post_id='99000000-0000-4000-8000-000000000000';
+            await PostController.deletePostFarmer(req,res)
+            const [result] = await sql`SELECT * FROM Post WHERE post_id='99000000-0000-4000-8000-000000000000'`;
+            expect(res.redirect).toHaveBeenCalledWith(`/farmer/myPosts?success=Post deleted successfully`);
+            expect(result).toBeFalsy();
+        });
+        it('should redirect to "/farmer/myPosts" with error if no post match to given id', async () => {
+            req.params.post_id='99000000-0000-4000-8000-000000000000';
+            await PostController.deletePostFarmer(req,res)
+            expect(res.redirect).toHaveBeenCalledWith(`/farmer/myPosts?error=Could not delete the post.Please try again later`);
+        });
+        it('should redirect to "/farmer/myPosts" with error message if req error', async () => {
+            req.params=null;
+           await PostController.deletePostFarmer(req,res);
+            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]farmer[/]myPosts[?]error=/));
         });
     });
 });

@@ -120,7 +120,7 @@ class PostController{
             
         }catch(e){
             logger.error(e);
-            res.redirect(`/farmer/post${req.params.post_id}?error=${e}`)
+            res.redirect(`/farmer/myPosts?error=${e}`)
         }
     }
 }
