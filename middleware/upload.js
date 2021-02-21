@@ -55,4 +55,4 @@ function uploadFileMiddleware(req, res, next) {
 }
 
 
-module.exports = uploadFileMiddleware;
+module.exports = {uploadFileMiddleware,imageFilter,fileError};
