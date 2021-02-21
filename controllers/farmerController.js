@@ -110,7 +110,7 @@ class FarmerController {
 
         }catch(e){
             logger.error(e);
-            res.redirect(`farmer/?error=${e}`)
+            res.redirect(`/farmer/?error=${e}`)
         }
     }
 }
