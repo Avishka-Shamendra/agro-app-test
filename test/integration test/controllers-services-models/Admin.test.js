@@ -394,7 +394,7 @@ describe('Admin Controller', () => {
                 stats:expect.objectContaining({
                     num_active_posts: expect.arrayContaining([{count: 2}]),
                     num_buyer_reqs: expect.arrayContaining([{count: 6}]),
-                    num_buyers: expect.arrayContaining([{count: 2}]),
+                    num_buyers: expect.arrayContaining([{count: 4}]),
                     num_complains: expect.arrayContaining([{count: 2}]),
                     num_expired_posts: expect.arrayContaining([{count: 1}]),
                     num_farmers: expect.arrayContaining([{count: 2}]),
