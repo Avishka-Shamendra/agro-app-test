@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon start",
-    "test": "jest --watchAll --verbose --runInBand --setupFiles dotenv/config"
+    "test": "jest --verbose --runInBand --setupFiles dotenv/config"
   },
   "keywords": [
     "group",
