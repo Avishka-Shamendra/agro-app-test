@@ -53,7 +53,7 @@ app.use((err, req, res,next) => {
 });
 /* Listen on the port for requests */
 const server = app.listen(process.env.PORT || 3000, () => {
-    console.log('Express server listening on port %d in %s mode', process.env.PORT, app.settings.env);
+    // console.log('Express server listening on port %d in %s mode', process.env.PORT, app.settings.env);
 });
 
 module.exports = { app,server };

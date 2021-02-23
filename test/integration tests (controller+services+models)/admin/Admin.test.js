@@ -1,7 +1,10 @@
 const AdminController = require('../../../controllers/adminController');
+const ComplainController = require('../../../controllers/complainsController');
+const PostController = require('../../../controllers/postController');
+const MessageController = require('../../../controllers/messageController');
 const sql = require('../../../config/db');
 let server;
-describe('Admin Controller', () => {
+describe('Admin Functionalities Integration Tests', () => {
     const res={
         render:null,
         redirect:null,
@@ -22,7 +25,7 @@ describe('Admin Controller', () => {
     afterAll(async()=>{
         await sql.end();
     })
-    describe('homePage method', () => {
+    describe('Admin View Home Page Functionality : AdminController homePage Method;', () => {
         
         it('should render home page with error and user params',()=>{
             const req={
@@ -36,7 +39,7 @@ describe('Admin Controller', () => {
             });
         })
     });
-    describe('signup method', () => {
+    describe('Admin Signup Functionality : AdminController signup Method;', () => {
         let req;
         beforeEach(() => {
             req = {
@@ -86,7 +89,7 @@ describe('Admin Controller', () => {
         });
         
     });
-    describe('signUpPage method', () => {
+    describe('Admin Rendering Signup Page Functionality : AdminController signupPage Method;', () => {
         
         it('should render signup page with necessary data',()=>{
             const req={
@@ -113,7 +116,7 @@ describe('Admin Controller', () => {
             expect(res.render).toHaveBeenCalledWith('adminSignUp',expected);
         })
     });
-    describe('editProfile method', () => {
+    describe('Admin editProfile Functionality : AdminController editProfile Method;', () => {
         let req;
         beforeEach(() => {
             req= {
@@ -152,7 +155,7 @@ describe('Admin Controller', () => {
             expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/editProfile[?]error=ValidationError/));
         });
     });
-    describe('allFarmersPage method', () => {
+    describe('Admin View all Farmers Functionality : AdminController allFarmersPage Method;', () => {
         let req;
         beforeEach(() => {
             
@@ -180,7 +183,7 @@ describe('Admin Controller', () => {
             expect(res.redirect).toHaveBeenCalled();
         });
     });
-    describe('allBuyersPage method', () => {
+    describe('Admin View all Buyers Functionality : AdminController allBuyersPage Method;', () => {
         let req;
         beforeEach(() => {
             req={
@@ -207,7 +210,7 @@ describe('Admin Controller', () => {
             expect(res.redirect).toHaveBeenCalled();
         });
     });
-    describe('adminSingleFarmerPage method', () => {
+    describe('Admin View Farmer Profile Functionality : AdminController adminSingleFarmerPage Method;', () => {
         let req;
         beforeEach(() => {
             req={
@@ -231,7 +234,7 @@ describe('Admin Controller', () => {
         });
         
     });
-    describe('adminSingleBuyerPage method', () => {
+    describe('Admin View Buyer Profile Functionality : AdminController adminSingleBuyerPage Method;', () => {
         let req;
         beforeEach(() => {
             req={
@@ -254,7 +257,7 @@ describe('Admin Controller', () => {
         });
         
     });
-    describe('banUser method', () => {
+    describe('Admin Ban User Functionality : AdminController banUser Method; ', () => {
         let req;
         beforeEach(() => {
             req={
@@ -317,7 +320,7 @@ describe('Admin Controller', () => {
         });
 
     });
-    describe('unbanUser method', () => {
+    describe('Admin Unban User Functionality : AdminController unbanUser Method;', () => {
         let req;
         beforeEach(() => {
             req={
@@ -378,7 +381,7 @@ describe('Admin Controller', () => {
         });
 
     });
-    describe('statsPage method', () => {
+    describe('Admin View System Stats Functionality : AdminController statsPage Method;', () => {
         let req;
         beforeEach(() => {
             req={
@@ -408,7 +411,7 @@ describe('Admin Controller', () => {
             expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/admin[?]error/));
         });
     });
-    describe('deleteFarmer method', () => {
+    describe('Admin Delete Farmer Functionality : AdminController deleteFarmer Method;', () => {
         let req;
         beforeEach(() => {
             req={
@@ -419,7 +422,7 @@ describe('Admin Controller', () => {
                 session:{user:{uid:'00000000-0000-4000-8000-000000000001'}}
             }
         });
-        it("should redirect to '/admin/allfarmers' with success message if no error",async ()=>{
+        it("redirect to '/admin/allfarmers' with success message if no error",async ()=>{
             await sql.begin(async sql => {
                 await sql`INSERT INTO UserInfo (uid,email, type, password, first_name,last_name,gender) VALUES ('00000000-0000-4000-8000-111000000003','testdel@gmail.com','farmer','passworddel','testFirstNamedel','testlastNamedel','Male');`
                 await sql`INSERT INTO Farmer VALUES ('00000000-0000-4000-8000-111000000003','981111300V','0777111003','Colombo','addressdel');`
@@ -440,7 +443,7 @@ describe('Admin Controller', () => {
             expect(res.redirect).toHaveBeenCalledWith('/admin/farmer/00000000-0000-4000-8000-111000000003?error=BadRequest: OOPS something went wrong could not delete account');
         })
     });
-    describe('deleteBuyer method', () => {
+    describe('Admin Delete Buyer Functionality : AdminController deleteBuyer Method;', () => {
         let req;
         beforeEach(() => {
             req={
@@ -472,7 +475,7 @@ describe('Admin Controller', () => {
             expect(res.redirect).toHaveBeenCalledWith('/admin/buyer/00000000-0000-4000-8000-111000000003?error=BadRequest: OOPS something went wrong could not delete account');
         })
     });
-    describe('adminPostsPage method', () => {
+    describe('Admin View Posts Functionality : Admin Controller adminPostsPage Method;', () => {
         let req;
         beforeEach(() => {
             req={
@@ -480,7 +483,7 @@ describe('Admin Controller', () => {
                 session:{user:{uid:''}}
             }
         });
-        it('should render adminPostsPage if no error', async () => {
+        it('system should render adminPostsPage if no error', async () => {
             await AdminController.adminPostsPage(req,res)
             expect(res.render).toHaveBeenCalledWith('adminPostsPage',expect.objectContaining({
                 error:expect.any(String),
@@ -499,13 +502,13 @@ describe('Admin Controller', () => {
                 })]),
             }));
         });
-        it('should redirect to admin if error', async () => {
+        it('system should redirect to /admin if error', async () => {
             req.query=null
             await AdminController.adminPostsPage(req,res)
             expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/admin[?]error=/));
         });
     });
-    describe('search method', () => {
+    describe('Admin Search User Functionality : AdminController Search Method;', () => {
         let req;
         beforeEach(() => {
             req={
@@ -546,4 +549,150 @@ describe('Admin Controller', () => {
             }));
         });
     });
+    describe("Admin View All Complains Functionallity : ComplainController adminComplainsPage Method;",()=>{
+        let req;
+        beforeEach(async() => {
+            req = {
+                session:{user:{uid:1}},
+                query:{error:"Error Checking",success:"Success Message"}
+            }
+        });
+
+        it("should render adminBuyerRequestPage page with error & sucess message", async () => {
+            await ComplainController.adminComplainsPage(req,res);
+            expect(res.render).toHaveBeenCalledWith('adminComplainsPage',{
+                error:"Error Checking",
+                success:"Success Message",
+                user:{uid:1},
+                complains: expect.arrayContaining([expect.objectContaining({
+                    comp_id:'00000000-0000-4111-8000-000000000000',
+                }),expect.objectContaining({
+                    comp_id:'00000000-0000-4222-8000-000000000000',
+                })])
+    
+            });
+        });
+
+        it("should redirect to /admin with error message", async () => {
+            req.query=null
+            await ComplainController.adminComplainsPage(req,res);
+            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]admin[?]error=/));   
+        });
+    });
+
+    describe("Admin Delete Complain Functionality : ComplainController delete Method;",()=>{
+        let req;
+        beforeEach(async() => {
+            req = {
+                params:{comp_id:"00000000-0000-4111-8000-000000000000"}
+            }
+        });
+
+        it("should redirect to /admin/complains with error message", async () => {
+            req.params=null
+            await ComplainController.delete(req,res);
+            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]admin[/]complains[?]error=/));   
+        });
+
+        it("should redirect to /admin/complains with sucess message if no errors", async () => {
+            await ComplainController.delete(req,res);
+            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]admin[/]complains[?]success=Complain Deleted Successfully/));
+            sql`INSERT INTO Complain VALUES('00000000-0000-4111-8000-000000000000','00000000-0000-4000-8000-000000000004','00000000-0000-4000-8000-000000000003','This is the test complain 1',NOW()::DATE);`   
+        });
+    });
+    describe('Admin Delete Post Functionality : PostController deletePostAdmin Method;', () => {
+        let req;
+        beforeEach(() => {
+            req={
+                params:{post_id:''}
+            }
+        });
+        it('should delete the post and redirect to "/admin/allPosts" with success message', async () => {
+            await sql`INSERT INTO Post VALUES('99000000-0000-4000-8000-000000000000','00000000-0000-4000-8000-000000000002','Test Product99','Test Post 1','Descriiption99','vegetable',100,100,'Colombo','Address99','0777100000','Active',NOW()::DATE,NOW()::DATE + INTERVAL '30 days',false)`
+            req.params.post_id='99000000-0000-4000-8000-000000000000';
+            await PostController.deletePostAdmin(req,res)
+            const [result] = await sql`SELECT * FROM Post WHERE post_id='99000000-0000-4000-8000-000000000000'`;
+            expect(res.redirect).toHaveBeenCalledWith(`/admin/allPosts?success=Post Deleted Successfully`);
+            expect(result).toBeFalsy();
+        });
+        it('should redirect to "/admin/allPosts" with error message if req error', async () => {
+            req.params=null;
+           await PostController.deletePostAdmin(req,res);
+            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]admin[/]allPosts[?]error=/));
+
+        });
+    });
+    describe('Admin Delete Post From Farmer Profile Functionality : PostController deleteFarmerPostAdmin Method;', () => {
+        let req;
+        beforeEach(() => {
+            req={
+                params:{post_id:''}
+            }
+        });
+        it('should delete the post and redirect to "/admin/allFarmers" with success message', async () => {
+            await sql`INSERT INTO Post VALUES('99000000-0000-4000-8000-000000000000','00000000-0000-4000-8000-000000000002','Test Product99','Test Post 1','Descriiption99','vegetable',100,100,'Colombo','Address99','0777100000','Active',NOW()::DATE,NOW()::DATE + INTERVAL '30 days',false)`
+            req.params.post_id='99000000-0000-4000-8000-000000000000';
+            await PostController.deleteFarmerPostAdmin(req,res)
+            const [result] = await sql`SELECT * FROM Post WHERE post_id='99000000-0000-4000-8000-000000000000'`;
+            expect(res.redirect).toHaveBeenCalledWith(`/admin/allFarmers?success=Post Deleted Successfully`);
+            expect(result).toBeFalsy();
+        });
+        it('should redirect to "/admin/allFarmers" with error message if req error', async () => {
+            req.params=null;
+           await PostController.deleteFarmerPostAdmin(req,res);
+            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]admin[/]allFarmers[?]error=/));
+
+        });
+    });
+    describe("Admin Delete Buyer Message Functionality : MessageController deleteMsgAdmin Method;",()=>{
+        let req;
+        beforeEach(async() => {
+            req = {
+                params:{req_msg_id:"11111111-0000-4000-8000-000000000000"}
+            }
+        });
+
+        it('should redirect /admin/buyerRequests with success message if no error',async ()=>{
+            
+            await MessageController.deleteMsgAdmin(req,res);
+            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]admin[/]buyerRequests[?]success=Message Deleted from the System Successfully/));
+            await sql`INSERT INTO Buyer_Request VALUES('11111111-0000-4000-8000-000000000000','00000000-0000-4000-8000-000000000004','10000000-0000-4000-8000-000000000000','Test Req Title 1','Test Description 1','New',NOW()::DATE);`;
+        })
+        it('should redirect to /admin/buyerRequests with error message',async ()=>{
+            const req={
+                params:null,
+            }
+            await MessageController.deleteMsgAdmin(req,res);
+            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]admin[/]buyerRequests[?]error=/));
+        })
+    })
+
+    describe("Admin View All Buyer Messages Functionality : MessageController adminMessagesPage Method;",()=>{
+        it('should render adminBuyerRequest Page with all requests',async ()=>{
+            const req={
+                query:{error:'test error', success:'test success'},
+                session:{user:{uid:1}},
+            }
+            await MessageController.adminMessagesPage(req,res);
+            expect(res.render).toHaveBeenCalledWith('adminBuyerRequestPage',{
+                error:"test error",
+                success:'test success',
+                user:{uid:1},
+                requests: expect.arrayContaining([expect.objectContaining({
+                    req_msg_id:'11111111-0000-4000-8000-000000000000',
+                }),expect.objectContaining({
+                    req_msg_id:'22222222-0000-4000-8000-000000000000',
+                })])
+    
+            });
+        })
+
+        it('should redirect to /admin with error message',async ()=>{
+            const req={
+                query:null,
+            }
+            await MessageController.adminMessagesPage(req,res);
+            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]admin[?]error=/));
+        })
+    })
 });

@@ -23,7 +23,7 @@ describe('root Controller', () => {
         await sql.end();
     })
 
-    describe('index page method', ()=>{
+    describe('Load Landing Page Functionality : RootController index page Method;', ()=>{
         let req;
         beforeEach(() => {
             
@@ -47,54 +47,7 @@ describe('root Controller', () => {
         });
 
     });
-
-
-    describe('login page method', ()=>{
-        it('should render login page with error,and email if any error ',()=>{
-            const req={
-                query:{error:'test error',
-                       email:'test@gmail.com',
-                       adminRegSuccess:"admin register successful",
-                       farmerRegSuccess:"farmer register successful",
-                       buyerRegSuccess:"buyer register successful",
-                       del_acc_success:"delete account successful"},
-                session:{user:{uid:1}}
-            }
-            rootController.loginPage(req,res);
-            expect(res.render).toHaveBeenCalledWith('login',{
-                error:'test error',
-                email:'test@gmail.com',
-                user:{uid:1},
-                adminRegSuccess:"admin register successful",
-                farmerRegSuccess:"farmer register successful",
-                buyerRegSuccess:"buyer register successful",
-                del_acc_success:"delete account successful"
-            })
-        })
-    });
-    describe('editprofilepage method', ()=>{
-        it('should render userEditProfile if any error',()=>{
-            const req={
-                query:{error:'test error',
-                       success:'success message',
-                       pwd_success:"pwd success message",
-                       pwd_error:"pwd error message",
-                       del_acc_error:"delete account error message",},
-                session:{user:{uid:1}}
-            }
-            rootController.editProfilePage(req,res)
-            expect(res.render).toHaveBeenCalledWith('userEditProfile',{
-                error:'test error',
-                user:{uid:1},
-                success:'success message',
-                pwd_success:"pwd success message",
-                pwd_error:"pwd error message",
-                del_acc_error:"delete account error message",
-            })
-        })
-    })
-
-    describe('creditpage method', ()=>{
+    describe('Load Credits Page Functionality : RootController creditpage Method;', ()=>{
         it('should render _credits_aboutus if any error',()=>{
             const req={
                 query:{error:'test error'},
@@ -107,8 +60,7 @@ describe('root Controller', () => {
             })
         })
     })
-
-    describe('login method', ()=>{
+    describe('User Login Funtionality : RootController login Method;', ()=>{
         let req;
         beforeEach(()=>{
             req={
@@ -152,7 +104,7 @@ describe('root Controller', () => {
 
 
     })
-    describe('logout method',()=>{
+    describe('User Logout Funtionality : RootController logout Method;',()=>{
         let req;
         beforeEach(()=>{
             req={
@@ -172,8 +124,51 @@ describe('root Controller', () => {
         })
         
     })
-
-    describe('changePassword method', ()=>{
+    describe('User View Login Page Funtionality : RootController login page Method;', ()=>{
+        it('should render login page with error,and email if any error ',()=>{
+            const req={
+                query:{error:'test error',
+                       email:'test@gmail.com',
+                       adminRegSuccess:"admin register successful",
+                       farmerRegSuccess:"farmer register successful",
+                       buyerRegSuccess:"buyer register successful",
+                       del_acc_success:"delete account successful"},
+                session:{user:{uid:1}}
+            }
+            rootController.loginPage(req,res);
+            expect(res.render).toHaveBeenCalledWith('login',{
+                error:'test error',
+                email:'test@gmail.com',
+                user:{uid:1},
+                adminRegSuccess:"admin register successful",
+                farmerRegSuccess:"farmer register successful",
+                buyerRegSuccess:"buyer register successful",
+                del_acc_success:"delete account successful"
+            })
+        })
+    });
+    describe('User View Edit Profile Page Funtionality : RootController editprofilepage Method;', ()=>{
+        it('should render userEditProfile if any error',()=>{
+            const req={
+                query:{error:'test error',
+                       success:'success message',
+                       pwd_success:"pwd success message",
+                       pwd_error:"pwd error message",
+                       del_acc_error:"delete account error message",},
+                session:{user:{uid:1}}
+            }
+            rootController.editProfilePage(req,res)
+            expect(res.render).toHaveBeenCalledWith('userEditProfile',{
+                error:'test error',
+                user:{uid:1},
+                success:'success message',
+                pwd_success:"pwd success message",
+                pwd_error:"pwd error message",
+                del_acc_error:"delete account error message",
+            })
+        })
+    })
+    describe('User Change Password Funtionality : RootController changePassword Method;', ()=>{
         let req;
         beforeEach(()=>{
             req={
@@ -219,7 +214,7 @@ describe('root Controller', () => {
         })
 
     })
-    describe('deleteAccount method', ()=>{
+    describe('User Delete Account Funtionality : RootController deleteAccount Method;', ()=>{
         let req;
         beforeEach(()=>{
             req={
