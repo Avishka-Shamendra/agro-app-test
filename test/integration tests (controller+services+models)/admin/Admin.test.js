@@ -25,18 +25,32 @@ describe('Admin Functionalities Integration Tests', () => {
     afterAll(async()=>{
         await sql.end();
     })
-    describe('Admin View Home Page Functionality : AdminController homePage Method;', () => {
+    
+    describe('Admin View Signup Page Functionality : AdminController signupPage Method;', () => {
         
-        it('should render home page with error and user params',()=>{
+        it('should render signup page with necessary data',()=>{
             const req={
-                query:{error:'test error'},
+                query:{
+                    error:'test error',
+                    email:'test@gmail.com',
+                    firstName:'firstName',
+                    lastName:'lastName',
+                    gender:'Male',
+                    securityKey:'qmYwp6J3yJO3TQKPaVTuUQnFGU6gCAxu'
+                },
                 session:{user:{uid:1}},
             }
-            AdminController.homePage(req,res);
-            expect(res.render).toHaveBeenCalledWith('adminHome',{
+            const expected={
                 error:'test error',
-                user:{uid:1}
-            });
+                email:'test@gmail.com',
+                user:{uid:1},
+                firstName:'firstName',
+                lastName:'lastName',
+                gender:'Male',
+                securityKey:'qmYwp6J3yJO3TQKPaVTuUQnFGU6gCAxu'
+            }
+            AdminController.signupPage(req,res);
+            expect(res.render).toHaveBeenCalledWith('adminSignUp',expected);
         })
     });
     describe('Admin Signup Functionality : AdminController signup Method;', () => {
@@ -64,59 +78,46 @@ describe('Admin Functionalities Integration Tests', () => {
             
             
         });
-        it("should redirect to '/signup' if email already exist", async () => {
+        it("should redirect to '/admin/signup' with BadRequest Error if email already exist", async () => {
             
             await sql`INSERT INTO UserInfo (email, type, password, first_name,last_name,gender) 
                     VALUES ('test@gmail.com', 'admin', '#$#t6e4gryg','firstName','lastName','Male')`;
 
             await AdminController.signup(req,res);
-            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/signup[?]error/));
+            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]admin[/]signup[?]error=BadRequest:  Email is already registered/));
                
         });
-        it("should redirect to '/signup' if security key invalid", async () => {
+        it("should redirect to '/admin/signup' with Unauthorized Error if security key invalid", async () => {
             
             req.body.securityKey='qmYwp6J3yJO3TQKPaVTuUQnFGU6gCA'
             await AdminController.signup(req,res);
-            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/signup[?]error=Unauthorized:  Provided Security Key Invalid/));
+            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]admin[/]signup[?]error=Unauthorized:  Provided Security Key Invalid/));
                
         });
-        it("should redirect to '/signup' with Validation Error if Joi Validation fails", async () => {
+        it("should redirect to '/admin/signup' with Validation Error if Joi Validation fails", async () => {
             
             req.body.email= 'test',
             await AdminController.signup(req,res);
-            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/signup[?]error=ValidationError/));
+            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]admin[/]signup[?]error=ValidationError/));
                
         });
         
     });
-    describe('Admin Rendering Signup Page Functionality : AdminController signupPage Method;', () => {
+    describe('Admin View Home Page Functionality : AdminController homePage Method;', () => {
         
-        it('should render signup page with necessary data',()=>{
+        it('should render home page with error and user params',()=>{
             const req={
-                query:{
-                    error:'test error',
-                    email:'test@gmail.com',
-                    firstName:'firstName',
-                    lastName:'lastName',
-                    gender:'Male',
-                    securityKey:'qmYwp6J3yJO3TQKPaVTuUQnFGU6gCAxu'
-                },
+                query:{error:'test error'},
                 session:{user:{uid:1}},
             }
-            const expected={
+            AdminController.homePage(req,res);
+            expect(res.render).toHaveBeenCalledWith('adminHome',{
                 error:'test error',
-                email:'test@gmail.com',
-                user:{uid:1},
-                firstName:'firstName',
-                lastName:'lastName',
-                gender:'Male',
-                securityKey:'qmYwp6J3yJO3TQKPaVTuUQnFGU6gCAxu'
-            }
-            AdminController.signupPage(req,res);
-            expect(res.render).toHaveBeenCalledWith('adminSignUp',expected);
+                user:{uid:1}
+            });
         })
     });
-    describe('Admin editProfile Functionality : AdminController editProfile Method;', () => {
+    describe('Admin Edit Profile Functionality : AdminController editProfile Method;', () => {
         let req;
         beforeEach(() => {
             req= {
