@@ -58,14 +58,11 @@ class Buyer {
 
 
 
-    static async getBuyers(limit){
+    static async getBuyers(){
         let data;
 
-        if(!limit){
-            data = await sql` SELECT U.uid,nic,joined,contact_no,district,email,first_name,last_name,gender,banned FROM buyer AS B NATURAL JOIN userinfo AS U WHERE B.uid = U.uid ORDER BY U.first_name ASC, U.last_name ASC, U.banned ASC,U.joined DESC`;
-        }else{
-            data = await sql` SELECT U.uid,nic,joined,contact_no,district,email,first_name,last_name,gender,banned FROM buyer AS B NATURAL JOIN userinfo AS U WHERE B.uid = U.uid ORDER BY U.first_name ASC, U.last_name ASC, U.banned ASC,U.joined DESC LIMIT ${limit}`;
-        }
+        data = await sql` SELECT U.uid,nic,joined,contact_no,district,email,first_name,last_name,gender,banned FROM buyer AS B NATURAL JOIN userinfo AS U WHERE B.uid = U.uid ORDER BY U.first_name ASC, U.last_name ASC, U.banned ASC,U.joined DESC`;
+        
         return data;
     }
 
