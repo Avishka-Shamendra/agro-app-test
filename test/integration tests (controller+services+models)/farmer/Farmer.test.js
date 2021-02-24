@@ -3,6 +3,7 @@ const ComplainController = require('../../../controllers/complainsController');
 const PostController = require('../../../controllers/postController');
 const MessageController = require('../../../controllers/messageController');
 const sql = require('../../../config/db');
+const ImageController = require('../../../controllers/imageController');
 let server;
 describe('Buyer Controller', () => {
     const res={
@@ -607,4 +608,39 @@ describe('Buyer Controller', () => {
         })
 
     })
+    describe("Farmer Add Image to Post Functionality : ImageController addPost Image Method", () => {
+        let req;
+        beforeEach(() => {
+            req={
+                file:{
+                    mimeType:'image',
+                    originalname:'test.png',
+                    data:'10001000',
+                },
+                params:{post_id:''},
+                session:{user:{uid:'00000000-0000-4000-8000-000000000002'}}
+            }
+        });
+        it('should redirect to "/farmer/post/<post_id> with success message if image is uploaded successfully"', async () => {
+            await sql`INSERT INTO Post VALUES('99000000-0000-4000-8000-000000000000','00000000-0000-4000-8000-000000000002','Test Product99','Test Post 1','Descriiption99','vegetable',100,100,'Colombo','Address99','0777100000','Active',NOW()::DATE,NOW()::DATE + INTERVAL '30 days',false)`
+            req.params.post_id='99000000-0000-4000-8000-000000000000';
+            await ImageController.addPostImage(req,res)
+            expect(res.redirect).toHaveBeenCalledWith('/farmer/post/99000000-0000-4000-8000-000000000000?success=Added Image Successfully')
+            await sql`DELETE FROM Post where post_id=${req.params.post_id}`
+        });
+        it('should redirect to "/farmer/post/<post_id> with error if no file is provided for upload"', async () => {
+            req.file=undefined
+            req.params.post_id='99000000-0000-4000-8000-000000000000';
+            await ImageController.addPostImage(req,res)
+            expect(res.redirect).toHaveBeenCalledWith('/farmer/post/99000000-0000-4000-8000-000000000000?error=BadRequest: You must select a file.')
+        });
+        it('should redirect to "/farmer/post/<post_id> with success message if image is uploaded and old image is replaced successfully"', async () => {
+            await sql`INSERT INTO Post VALUES('99000000-0000-4000-8000-000000000000','00000000-0000-4000-8000-000000000002','Test Product99','Test Post 1','Descriiption99','vegetable',100,100,'Colombo','Address99','0777100000','Active',NOW()::DATE,NOW()::DATE + INTERVAL '30 days',true)`//last field is set to true to mock previous upload
+            await sql`INSERT INTO Post_Image VALUES('99000000-0000-4000-8000-000000000000','png','test image','11001100')`
+            req.params.post_id='99000000-0000-4000-8000-000000000000';
+            await ImageController.addPostImage(req,res)
+            expect(res.redirect).toHaveBeenCalledWith('/farmer/post/99000000-0000-4000-8000-000000000000?success=Added Image Successfully')
+            await sql`DELETE FROM Post where post_id=${req.params.post_id}`
+        });
+    });
 });
