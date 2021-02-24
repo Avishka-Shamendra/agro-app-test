@@ -341,6 +341,13 @@ describe('Buyer Functionalities Integration Tests', () => {
                 })
             }));
         })
+        it("should redirect to '/editProfile' with BadRequest if provided uid is not a Buyer",async ()=>{
+            req.params.uid='1'
+
+            await BuyerController.editProfile(req,res);
+            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/editProfile[?]error=BadRequest: No Such Buyer Exist/));
+            
+        });
         it('should redirect to /editProfile with bad request message new email is already registered',async()=>{
             req.body.email='test1@gmail.com'
             await BuyerController.editProfile(req,res)

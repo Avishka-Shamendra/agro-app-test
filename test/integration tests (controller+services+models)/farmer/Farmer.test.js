@@ -246,6 +246,13 @@ describe('Buyer Controller', () => {
             );
             
         })
+        it("should redirect to '/editProfile' with BadRequest if provided uid is not farmer",async ()=>{
+            req.params.uid='1'
+
+            await FarmerController.editProfile(req,res);
+            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/editProfile[?]error=BadRequest: No Such Farmer Exist/));
+            
+        });
         it('should redirect to /editProfile with validation error if joi validation fails',async()=>{
             req.body.email='test1'
             await FarmerController.editProfile(req,res)

@@ -105,7 +105,7 @@ describe('Admin Functionalities Integration Tests', () => {
     });
     describe('Admin View Home Page Functionality : AdminController homePage Method;', () => {
         
-        it('should render home page with error and user params',()=>{
+        it('should render "adminHome" with error and user params',()=>{
             const req={
                 query:{error:'test error'},
                 session:{user:{uid:1}},
@@ -122,8 +122,8 @@ describe('Admin Functionalities Integration Tests', () => {
         beforeEach(() => {
             req= {
                 body:{
-                    firstName:'First Name',
-                    lastName:'Last Name',
+                    firstName:'firstName',
+                    lastName:'lastName',
                     gender:'Male',
                     email:'test@gmail.com',
                 },
@@ -135,10 +135,23 @@ describe('Admin Functionalities Integration Tests', () => {
             await sql`INSERT INTO UserInfo (uid,email, type, password, first_name,last_name,gender) 
                     VALUES ('123e4567-e89b-42d3-8456-426614174000','test@gmail.com','admin','#$#t6e4gryg','firstName','lastName','Male')`;
             req.body.firstName='Changed First Name'        
+            req.body.lastName='Changed Last Name'        
+            req.body.gender='Other'        
+            req.body.email='testchanged@gmail.com'        
             await AdminController.editProfile(req,res);
             await sql`DELETE FROM UserInfo WHERE uid='123e4567-e89b-42d3-8456-426614174000'`;
             expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/editProfile[?]success/));
             expect(req.session.user).toHaveProperty('firstName','Changed First Name'); 
+            expect(req.session.user).toHaveProperty('lastName','Changed Last Name'); 
+            expect(req.session.user).toHaveProperty('gender','Other'); 
+            expect(req.session.user).toHaveProperty('email','testchanged@gmail.com'); 
+        });
+        it("should redirect to '/editProfile' with BadRequest if provided uid is not an admin",async ()=>{
+            req.params.uid='1'
+
+            await AdminController.editProfile(req,res);
+            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/editProfile[?]error=BadRequest: No Such User Exist/));
+            
         });
         it("should redirect to '/editProfile' with BadRequest if changed email is already registered",async ()=>{
             await sql`INSERT INTO UserInfo (uid,email, type, password, first_name,last_name,gender) 
