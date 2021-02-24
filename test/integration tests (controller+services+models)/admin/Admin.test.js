@@ -38,12 +38,12 @@ describe('Admin Functionalities Integration Tests', () => {
                     gender:'Male',
                     securityKey:'qmYwp6J3yJO3TQKPaVTuUQnFGU6gCAxu'
                 },
-                session:{user:{uid:1}},
+                session:{user:{uid:'00000000-0000-4000-8000-000000000001', type:'admin'}},
             }
             const expected={
                 error:'test error',
                 email:'test@gmail.com',
-                user:{uid:1},
+                user:{uid:'00000000-0000-4000-8000-000000000001', type:'admin'},
                 firstName:'firstName',
                 lastName:'lastName',
                 gender:'Male',
@@ -65,7 +65,8 @@ describe('Admin Functionalities Integration Tests', () => {
                     lastName:'Shamendra',
                     gender:'Male',
                     securityKey:'qmYwp6J3yJO3TQKPaVTuUQnFGU6gCAxu'
-                }
+                },
+                session:{user:{uid:'00000000-0000-4000-8000-000000000001', type:'admin'},}
             }
         });
         afterEach(async() => {
@@ -108,12 +109,12 @@ describe('Admin Functionalities Integration Tests', () => {
         it('should render "adminHome" with error and user params',()=>{
             const req={
                 query:{error:'test error'},
-                session:{user:{uid:1}},
+                session:{user:{uid:'00000000-0000-4000-8000-000000000001', type:'admin'},}
             }
             AdminController.homePage(req,res);
             expect(res.render).toHaveBeenCalledWith('adminHome',{
                 error:'test error',
-                user:{uid:1}
+                user:{uid:'00000000-0000-4000-8000-000000000001', type:'admin'},
             });
         })
     });
@@ -128,7 +129,7 @@ describe('Admin Functionalities Integration Tests', () => {
                     email:'test@gmail.com',
                 },
                 params:{uid:'123e4567-e89b-42d3-8456-426614174000'},
-                session:{user:{type:'admin'}},
+                session:{user:{type:'admin',uid:'00000000-0000-4000-8000-000000000001'}},
             }
         });
         it("should redirect to '/editProfile' with success message if no error",async ()=>{
@@ -175,7 +176,7 @@ describe('Admin Functionalities Integration Tests', () => {
             
             req={
                 query:{},
-                session:{user:{}}
+                session:{user:{uid:'00000000-0000-4000-8000-000000000001',type:'admin'}}
             } 
         });
         it('should render adminFarmers Page if no error',async ()=>{
@@ -202,7 +203,7 @@ describe('Admin Functionalities Integration Tests', () => {
         beforeEach(() => {
             req={
                 query:{},
-                session:{user:{}}
+                session:{user:{uid:'00000000-0000-4000-8000-000000000001',type:'admin'}}
             } 
         });
         it('should render adminBuyers Page if no error',async ()=>{
@@ -229,7 +230,7 @@ describe('Admin Functionalities Integration Tests', () => {
         beforeEach(() => {
             req={
                 query:{},
-                session:{user:{}},
+                session:{user:{uid:'00000000-0000-4000-8000-000000000001',type:'admin'}},
                 params:{uid:''}
             }
         });
@@ -253,7 +254,7 @@ describe('Admin Functionalities Integration Tests', () => {
         beforeEach(() => {
             req={
                 query:{},
-                session:{user:{}},
+                session:{user:{uid:'00000000-0000-4000-8000-000000000001',type:'admin'}},
                 params:{uid:''}
             }
         });
@@ -276,7 +277,8 @@ describe('Admin Functionalities Integration Tests', () => {
         beforeEach(() => {
             req={
                 params:{uid:''},
-                url:''
+                url:'',
+                session:{user:{uid:'00000000-0000-4000-8000-000000000001',type:'admin'}}
             }
         });
         it('should redirect to admin/buyer/<uid> if req url has "buyer" and ban is a success',async ()=>{
@@ -339,7 +341,8 @@ describe('Admin Functionalities Integration Tests', () => {
         beforeEach(() => {
             req={
                 params:{uid:''},
-                url:''
+                url:'',
+                session:{user:{uid:'00000000-0000-4000-8000-000000000001',type:'admin'}}
             }
         });
         it('should redirect to admin/buyer/<uid> if req url has "buyer" and unban is a success',async ()=>{
@@ -404,7 +407,7 @@ describe('Admin Functionalities Integration Tests', () => {
                 body:{
                     del_password:'12345'
                 },
-                session:{user:{uid:'00000000-0000-4000-8000-000000000001'}}
+                session:{user:{uid:'00000000-0000-4000-8000-000000000001',type:'admin'}}
             }
         });
         it("should redirect to '/admin/allfarmers' with success message if no error",async ()=>{
@@ -436,7 +439,7 @@ describe('Admin Functionalities Integration Tests', () => {
                 body:{
                     del_password:'12345'
                 },
-                session:{user:{uid:'00000000-0000-4000-8000-000000000001'}}
+                session:{user:{uid:'00000000-0000-4000-8000-000000000001',type:'admin'}}
             }
         });
         it("should redirect to '/admin/allBuyers' with success message if no error",async ()=>{
@@ -465,14 +468,14 @@ describe('Admin Functionalities Integration Tests', () => {
         beforeEach(() => {
             req={
                 query:{error:{}},
-                session:{user:{type:'admin'}}
+                session:{user:{uid:'00000000-0000-4000-8000-000000000001',type:'admin'}}
             }
         });
         it('should render adminStatsPage with stats_obj as data from DB',async()=>{
             await AdminController.statsPage(req,res);
             expect(res.render).toHaveBeenCalledWith("adminStatsPage", expect.objectContaining({
                 error:{},
-                user:{type:'admin'},
+                user:{uid:'00000000-0000-4000-8000-000000000001',type:'admin'},
                 stats:expect.objectContaining({
                     num_active_posts: expect.arrayContaining([{count: 2}]),
                     num_buyer_reqs: expect.arrayContaining([{count: 6}]),
@@ -495,6 +498,7 @@ describe('Admin Functionalities Integration Tests', () => {
         beforeEach(() => {
             req={
                 query:{query:''},
+                session:{user:{uid:'00000000-0000-4000-8000-000000000001',type:'admin'}}
             }
         });
         it('should return a json object with type nic and success set to true if query was made using numbers between 0-9', async () => {
@@ -536,7 +540,7 @@ describe('Admin Functionalities Integration Tests', () => {
         beforeEach(() => {
             req={
                 query:{error:'',success:''},
-                session:{user:{uid:''}}
+                session:{user:{uid:'00000000-0000-4000-8000-000000000001',type:'admin'}}
             }
         });
         it('system should render adminPostsPage if no error', async () => {
@@ -544,7 +548,7 @@ describe('Admin Functionalities Integration Tests', () => {
             expect(res.render).toHaveBeenCalledWith('adminPostsPage',expect.objectContaining({
                 error:expect.any(String),
                 success:expect.any(String),
-                user: expect.any(Object),
+                user:{uid:'00000000-0000-4000-8000-000000000001',type:'admin'},
                 activePosts: expect.arrayContaining([expect.objectContaining({
                     post_id:'10000000-0000-4000-8000-000000000000',
                 }),expect.objectContaining({
@@ -569,7 +573,7 @@ describe('Admin Functionalities Integration Tests', () => {
         beforeEach(() => {
             req={
                 params:{post_id:''},
-                session:{user:{uid:'00000000-0000-4000-8000-000000000001'}}
+                session:{user:{uid:'00000000-0000-4000-8000-000000000001',type:'admin'}}
             }
         });
         it('should delete the post and redirect to "/admin/allPosts" with success message', async () => {
@@ -591,7 +595,8 @@ describe('Admin Functionalities Integration Tests', () => {
         let req;
         beforeEach(() => {
             req={
-                params:{post_id:''}
+                params:{post_id:''},
+                session:{user:{uid:'00000000-0000-4000-8000-000000000001',type:'admin'}}
             }
         });
         it('should delete the post and redirect to "/admin/allFarmers" with success message', async () => {
@@ -613,7 +618,7 @@ describe('Admin Functionalities Integration Tests', () => {
         let req;
         beforeEach(async() => {
             req = {
-                session:{user:{uid:1}},
+                session:{user:{uid:'00000000-0000-4000-8000-000000000001',type:'admin'}},
                 query:{error:"Error Checking",success:"Success Message"}
             }
         });
@@ -623,7 +628,7 @@ describe('Admin Functionalities Integration Tests', () => {
             expect(res.render).toHaveBeenCalledWith('adminComplainsPage',{
                 error:"Error Checking",
                 success:"Success Message",
-                user:{uid:1},
+                user:{uid:'00000000-0000-4000-8000-000000000001',type:'admin'},
                 complains: expect.arrayContaining([expect.objectContaining({
                     comp_id:'00000000-0000-4111-8000-000000000000',
                 }),expect.objectContaining({
@@ -633,7 +638,7 @@ describe('Admin Functionalities Integration Tests', () => {
             });
         });
 
-        it("should redirect to /admin with error message", async () => {
+        it("should redirect to /admin with error message if request error", async () => {
             req.query=null
             await ComplainController.adminComplainsPage(req,res);
             expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]admin[?]error=/));   
@@ -643,56 +648,34 @@ describe('Admin Functionalities Integration Tests', () => {
         let req;
         beforeEach(async() => {
             req = {
-                params:{comp_id:"00000000-0000-4111-8000-000000000000"}
+                params:{comp_id:"00000000-0000-4111-8000-000000000000"},
+                session:{user:{uid:'00000000-0000-4000-8000-000000000001',type:'admin'}}
             }
         });
 
-        it("should redirect to /admin/complains with error message", async () => {
+        it("should redirect to /admin/complains with error message if request error", async () => {
             req.params=null
             await ComplainController.delete(req,res);
             expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]admin[/]complains[?]error=/));   
         });
 
-        it("should redirect to /admin/complains with sucess message if no errors", async () => {
+        it("should redirect to /admin/complains with success message if no errors", async () => {
             await ComplainController.delete(req,res);
             expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]admin[/]complains[?]success=Complain Deleted Successfully/));
             sql`INSERT INTO Complain VALUES('00000000-0000-4111-8000-000000000000','00000000-0000-4000-8000-000000000004','00000000-0000-4000-8000-000000000003','This is the test complain 1',NOW()::DATE);`   
         });
     });
-
-    describe("Admin Delete Buyer Message Functionality : MessageController deleteMsgAdmin Method;",()=>{
-        let req;
-        beforeEach(async() => {
-            req = {
-                params:{req_msg_id:"11111111-0000-4000-8000-000000000000"}
-            }
-        });
-
-        it('should redirect /admin/buyerRequests with success message if no error',async ()=>{
-            
-            await MessageController.deleteMsgAdmin(req,res);
-            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]admin[/]buyerRequests[?]success=Message Deleted from the System Successfully/));
-            await sql`INSERT INTO Buyer_Request VALUES('11111111-0000-4000-8000-000000000000','00000000-0000-4000-8000-000000000004','10000000-0000-4000-8000-000000000000','Test Req Title 1','Test Description 1','New',NOW()::DATE);`;
-        })
-        it('should redirect to /admin/buyerRequests with error message',async ()=>{
-            const req={
-                params:null,
-            }
-            await MessageController.deleteMsgAdmin(req,res);
-            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]admin[/]buyerRequests[?]error=/));
-        })
-    })
     describe("Admin View All Buyer Messages Functionality : MessageController adminMessagesPage Method;",()=>{
-        it('should render adminBuyerRequest Page with all requests',async ()=>{
+        it('should render adminBuyerRequestPage with all requests if no error',async ()=>{
             const req={
                 query:{error:'test error', success:'test success'},
-                session:{user:{uid:1}},
+                session:{user:{uid:'00000000-0000-4000-8000-000000000001',type:'admin'}},
             }
             await MessageController.adminMessagesPage(req,res);
             expect(res.render).toHaveBeenCalledWith('adminBuyerRequestPage',{
                 error:"test error",
                 success:'test success',
-                user:{uid:1},
+                user:{uid:'00000000-0000-4000-8000-000000000001',type:'admin'},
                 requests: expect.arrayContaining([expect.objectContaining({
                     req_msg_id:'11111111-0000-4000-8000-000000000000',
                 }),expect.objectContaining({
@@ -702,7 +685,7 @@ describe('Admin Functionalities Integration Tests', () => {
             });
         })
 
-        it('should redirect to /admin with error message',async ()=>{
+        it('should redirect to /admin with error message in case of request error',async ()=>{
             const req={
                 query:null,
             }
@@ -710,4 +693,28 @@ describe('Admin Functionalities Integration Tests', () => {
             expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]admin[?]error=/));
         })
     })
+    describe("Admin Delete Buyer Message Functionality : MessageController deleteMsgAdmin Method;",()=>{
+        let req;
+        beforeEach(async() => {
+            req = {
+                params:{req_msg_id:"11111111-0000-4000-8000-000000000000"},
+                session:{user:{uid:'00000000-0000-4000-8000-000000000001',type:'admin'}}
+            }
+        });
+
+        it('should redirect /admin/buyerRequests with success message if no error',async ()=>{
+            
+            await MessageController.deleteMsgAdmin(req,res);
+            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]admin[/]buyerRequests[?]success=Message Deleted from the System Successfully/));
+            await sql`INSERT INTO Buyer_Request VALUES('11111111-0000-4000-8000-000000000000','00000000-0000-4000-8000-000000000004','10000000-0000-4000-8000-000000000000','Test Req Title 1','Test Description 1','New',NOW()::DATE);`;
+        })
+        it('should redirect to /admin/buyerRequests with error message if request error',async ()=>{
+            const req={
+                params:null,
+            }
+            await MessageController.deleteMsgAdmin(req,res);
+            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]admin[/]buyerRequests[?]error=/));
+        })
+    })
+    
 });
