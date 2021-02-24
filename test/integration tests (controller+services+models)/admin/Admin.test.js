@@ -490,39 +490,6 @@ describe('Admin Functionalities Integration Tests', () => {
             expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/admin[?]error/));
         });
     });
-    describe('Admin View Posts Functionality : Admin Controller adminPostsPage Method;', () => {
-        let req;
-        beforeEach(() => {
-            req={
-                query:{error:'',success:''},
-                session:{user:{uid:''}}
-            }
-        });
-        it('system should render adminPostsPage if no error', async () => {
-            await AdminController.adminPostsPage(req,res)
-            expect(res.render).toHaveBeenCalledWith('adminPostsPage',expect.objectContaining({
-                error:expect.any(String),
-                success:expect.any(String),
-                user: expect.any(Object),
-                activePosts: expect.arrayContaining([expect.objectContaining({
-                    post_id:'10000000-0000-4000-8000-000000000000',
-                }),expect.objectContaining({
-                    post_id:'20000000-0000-4000-8000-000000000000',
-                })]),
-                soldPosts: expect.arrayContaining([expect.objectContaining({
-                    post_id:'40000000-0000-4000-8000-000000000000',
-                })]),
-                expiredPosts: expect.arrayContaining([expect.objectContaining({
-                    post_id:'30000000-0000-4000-8000-000000000000',
-                })]),
-            }));
-        });
-        it('system should redirect to /admin if error', async () => {
-            req.query=null
-            await AdminController.adminPostsPage(req,res)
-            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/admin[?]error=/));
-        });
-    });
     describe('Admin Search User Functionality : AdminController Search Method;', () => {
         let req;
         beforeEach(() => {
@@ -564,62 +531,45 @@ describe('Admin Functionalities Integration Tests', () => {
             }));
         });
     });
-    describe("Admin View All Complains Functionallity : ComplainController adminComplainsPage Method;",()=>{
+    describe('Admin View Posts Functionality : Admin Controller adminPostsPage Method;', () => {
         let req;
-        beforeEach(async() => {
-            req = {
-                session:{user:{uid:1}},
-                query:{error:"Error Checking",success:"Success Message"}
+        beforeEach(() => {
+            req={
+                query:{error:'',success:''},
+                session:{user:{uid:''}}
             }
         });
-
-        it("should render adminBuyerRequestPage page with error & sucess message", async () => {
-            await ComplainController.adminComplainsPage(req,res);
-            expect(res.render).toHaveBeenCalledWith('adminComplainsPage',{
-                error:"Error Checking",
-                success:"Success Message",
-                user:{uid:1},
-                complains: expect.arrayContaining([expect.objectContaining({
-                    comp_id:'00000000-0000-4111-8000-000000000000',
+        it('system should render adminPostsPage if no error', async () => {
+            await AdminController.adminPostsPage(req,res)
+            expect(res.render).toHaveBeenCalledWith('adminPostsPage',expect.objectContaining({
+                error:expect.any(String),
+                success:expect.any(String),
+                user: expect.any(Object),
+                activePosts: expect.arrayContaining([expect.objectContaining({
+                    post_id:'10000000-0000-4000-8000-000000000000',
                 }),expect.objectContaining({
-                    comp_id:'00000000-0000-4222-8000-000000000000',
-                })])
-    
-            });
+                    post_id:'20000000-0000-4000-8000-000000000000',
+                })]),
+                soldPosts: expect.arrayContaining([expect.objectContaining({
+                    post_id:'40000000-0000-4000-8000-000000000000',
+                })]),
+                expiredPosts: expect.arrayContaining([expect.objectContaining({
+                    post_id:'30000000-0000-4000-8000-000000000000',
+                })]),
+            }));
         });
-
-        it("should redirect to /admin with error message", async () => {
+        it('system should redirect to /admin if error', async () => {
             req.query=null
-            await ComplainController.adminComplainsPage(req,res);
-            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]admin[?]error=/));   
-        });
-    });
-
-    describe("Admin Delete Complain Functionality : ComplainController delete Method;",()=>{
-        let req;
-        beforeEach(async() => {
-            req = {
-                params:{comp_id:"00000000-0000-4111-8000-000000000000"}
-            }
-        });
-
-        it("should redirect to /admin/complains with error message", async () => {
-            req.params=null
-            await ComplainController.delete(req,res);
-            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]admin[/]complains[?]error=/));   
-        });
-
-        it("should redirect to /admin/complains with sucess message if no errors", async () => {
-            await ComplainController.delete(req,res);
-            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]admin[/]complains[?]success=Complain Deleted Successfully/));
-            sql`INSERT INTO Complain VALUES('00000000-0000-4111-8000-000000000000','00000000-0000-4000-8000-000000000004','00000000-0000-4000-8000-000000000003','This is the test complain 1',NOW()::DATE);`   
+            await AdminController.adminPostsPage(req,res)
+            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/admin[?]error=/));
         });
     });
     describe('Admin Delete Post Functionality : PostController deletePostAdmin Method;', () => {
         let req;
         beforeEach(() => {
             req={
-                params:{post_id:''}
+                params:{post_id:''},
+                session:{user:{uid:'00000000-0000-4000-8000-000000000001'}}
             }
         });
         it('should delete the post and redirect to "/admin/allPosts" with success message', async () => {
@@ -659,6 +609,57 @@ describe('Admin Functionalities Integration Tests', () => {
 
         });
     });
+    describe("Admin View All Complains Functionallity : ComplainController adminComplainsPage Method;",()=>{
+        let req;
+        beforeEach(async() => {
+            req = {
+                session:{user:{uid:1}},
+                query:{error:"Error Checking",success:"Success Message"}
+            }
+        });
+
+        it("should render adminBuyerRequestPage page if no error", async () => {
+            await ComplainController.adminComplainsPage(req,res);
+            expect(res.render).toHaveBeenCalledWith('adminComplainsPage',{
+                error:"Error Checking",
+                success:"Success Message",
+                user:{uid:1},
+                complains: expect.arrayContaining([expect.objectContaining({
+                    comp_id:'00000000-0000-4111-8000-000000000000',
+                }),expect.objectContaining({
+                    comp_id:'00000000-0000-4222-8000-000000000000',
+                })])
+    
+            });
+        });
+
+        it("should redirect to /admin with error message", async () => {
+            req.query=null
+            await ComplainController.adminComplainsPage(req,res);
+            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]admin[?]error=/));   
+        });
+    });
+    describe("Admin Delete Complain Functionality : ComplainController delete Method;",()=>{
+        let req;
+        beforeEach(async() => {
+            req = {
+                params:{comp_id:"00000000-0000-4111-8000-000000000000"}
+            }
+        });
+
+        it("should redirect to /admin/complains with error message", async () => {
+            req.params=null
+            await ComplainController.delete(req,res);
+            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]admin[/]complains[?]error=/));   
+        });
+
+        it("should redirect to /admin/complains with sucess message if no errors", async () => {
+            await ComplainController.delete(req,res);
+            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]admin[/]complains[?]success=Complain Deleted Successfully/));
+            sql`INSERT INTO Complain VALUES('00000000-0000-4111-8000-000000000000','00000000-0000-4000-8000-000000000004','00000000-0000-4000-8000-000000000003','This is the test complain 1',NOW()::DATE);`   
+        });
+    });
+
     describe("Admin Delete Buyer Message Functionality : MessageController deleteMsgAdmin Method;",()=>{
         let req;
         beforeEach(async() => {
@@ -681,7 +682,6 @@ describe('Admin Functionalities Integration Tests', () => {
             expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]admin[/]buyerRequests[?]error=/));
         })
     })
-
     describe("Admin View All Buyer Messages Functionality : MessageController adminMessagesPage Method;",()=>{
         it('should render adminBuyerRequest Page with all requests',async ()=>{
             const req={
