@@ -194,7 +194,7 @@ describe('Admin Functionalities Integration Tests', () => {
         it('should redirect to admin home in case of error',async ()=>{
             req.query=null
             await AdminController.allFarmersPage(req,res);
-            expect(res.redirect).toHaveBeenCalled();
+            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]admin[?]error=/));
         });
     });
     describe('Admin View all Buyers Functionality : AdminController allBuyersPage Method;', () => {
@@ -221,7 +221,7 @@ describe('Admin Functionalities Integration Tests', () => {
         it('should redirect to admin home in case of error',async ()=>{
             req.query=null
             await AdminController.allBuyersPage(req,res);
-            expect(res.redirect).toHaveBeenCalled();
+            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]admin[?]error=/));
         });
     });
     describe('Admin View Farmer Profile Functionality : AdminController adminSingleFarmerPage Method;', () => {
@@ -312,19 +312,19 @@ describe('Admin Functionalities Integration Tests', () => {
                 expect.stringMatching(/admin[?]error/)
             );
         });
-        it('should redirect to /admin/buyer/<uid> if req url has "buyer" but ban failed',async ()=>{
+        it('should redirect to /admin/allBuyers if req url has "buyer" but ban failed',async ()=>{
             req.params.uid='00000000-0000-4000-8000-300000000003'
             req.url='/buyer/00000000-0000-4000-8000-300000000003/ban'
             await AdminController.banUser(req,res)
 
-            expect.stringMatching(/admin[/]buyer[/]00000000-0000-4000-8000-300000000003[?]error/)
+            expect.stringMatching(/admin[/]allBuyers[?]error/)
         });
-        it('should redirect to /admin/farmer/<uid> if req url has "farmer" but ban failed',async ()=>{
+        it('should redirect to /admin/allFarmers if req url has "farmer" but ban failed',async ()=>{
             req.params.uid='00000000-0000-4000-8000-300000000003'
             req.url='/farmer/00000000-0000-4000-8000-300000000003/ban'
             await AdminController.banUser(req,res)
 
-            expect.stringMatching(/admin[/]farmer[/]00000000-0000-4000-8000-300000000003[?]error/)
+            expect.stringMatching(/admin[/]allFarmers[?]error/)
         });
         it('should redirect to /admin if req url has error and ban failed',async ()=>{
             req.params.uid='00000000-0000-4000-8000-300000000003'
@@ -373,19 +373,19 @@ describe('Admin Functionalities Integration Tests', () => {
                 expect.stringMatching(/admin[?]error/)
             );
         });
-        it('should redirect to /admin/buyer/<uid> if req url has "buyer" but unban failed',async ()=>{
+        it('should redirect to /admin/allBuyers if req url has "buyer" but unban failed',async ()=>{
             req.params.uid='00000000-0000-4000-8000-300000000003'
             req.url='/buyer/00000000-0000-4000-8000-300000000003/unban'
             await AdminController.unbanUser(req,res)
 
-            expect.stringMatching(/admin[/]buyer[/]00000000-0000-4000-8000-300000000003[?]error/)
+            expect.stringMatching(/admin[/]allBuyers[?]error/)
         });
-        it('should redirect to /admin/farmer/<uid> if req url has "farmer" but unban failed',async ()=>{
+        it('should redirect to /admin/allFarmers if req url has "farmer" but unban failed',async ()=>{
             req.params.uid='00000000-0000-4000-8000-300000000003'
             req.url='/farmer/00000000-0000-4000-8000-300000000003/unban'
             await AdminController.unbanUser(req,res)
 
-            expect.stringMatching(/admin[/]farmer[/]00000000-0000-4000-8000-300000000003[?]error/)
+            expect.stringMatching(/admin[/]allFarmers[?]error/)
         });
         it('should redirect to /admin if req url has error and unban failed',async ()=>{
             req.params.uid='00000000-0000-4000-8000-300000000003'
@@ -394,6 +394,71 @@ describe('Admin Functionalities Integration Tests', () => {
             expect.stringMatching(/admin[?]error/)
         });
 
+    });
+    
+    describe('Admin Delete Farmer Functionality : AdminController deleteFarmer Method;', () => {
+        let req;
+        beforeEach(() => {
+            req={
+                params:{uid:''},
+                body:{
+                    del_password:'12345'
+                },
+                session:{user:{uid:'00000000-0000-4000-8000-000000000001'}}
+            }
+        });
+        it("should redirect to '/admin/allfarmers' with success message if no error",async ()=>{
+            await sql.begin(async sql => {
+                await sql`INSERT INTO UserInfo (uid,email, type, password, first_name,last_name,gender) VALUES ('00000000-0000-4000-8000-111000000003','testdel@gmail.com','farmer','passworddel','testFirstNamedel','testlastNamedel','Male');`
+                await sql`INSERT INTO Farmer VALUES ('00000000-0000-4000-8000-111000000003','981111300V','0777111003','Colombo','addressdel');`
+              })
+                req.params.uid='00000000-0000-4000-8000-111000000003'
+                await AdminController.deleteFarmer(req,res);
+                expect(res.redirect).toHaveBeenCalledWith('/admin/allFarmers?success=Farmer Deleted Successfully');
+        })
+        it("should redirect to '/admin/allfarmers' with error if admin gave the wrong password",async()=>{
+            req.body.del_password='1234'
+            req.params.uid='00000000-0000-4000-8000-000000000003'
+            await AdminController.deleteFarmer(req,res)
+            expect(res.redirect).toHaveBeenCalledWith('/admin/allFarmers?error=BadRequest: Password Entered Not Valid');
+        })
+        it("should redirect to '/admin/allFarmers' with error if admin gave the invalid id to delete",async()=>{
+            req.params.uid='00000000-0000-4000-8000-111000000003'
+            await AdminController.deleteFarmer(req,res)
+            expect(res.redirect).toHaveBeenCalledWith('/admin/allFarmers?error=BadRequest: OOPS something went wrong could not delete account');
+        })
+    });
+    describe('Admin Delete Buyer Functionality : AdminController deleteBuyer Method;', () => {
+        let req;
+        beforeEach(() => {
+            req={
+                params:{uid:''},
+                body:{
+                    del_password:'12345'
+                },
+                session:{user:{uid:'00000000-0000-4000-8000-000000000001'}}
+            }
+        });
+        it("should redirect to '/admin/allBuyers' with success message if no error",async ()=>{
+            await sql.begin(async sql => {
+                await sql`INSERT INTO UserInfo (uid,email, type, password, first_name,last_name,gender) VALUES ('00000000-0000-4000-8000-111000000003','testdel@gmail.com','buyer','passworddel','testFirstNamedel','testlastNamedel','Male');`
+                await sql`INSERT INTO Buyer VALUES ('00000000-0000-4000-8000-111000000003','981111300V','0777111003','Colombo');`
+              })
+                req.params.uid='00000000-0000-4000-8000-111000000003'
+                await AdminController.deleteBuyer(req,res);
+                expect(res.redirect).toHaveBeenCalledWith('/admin/allBuyers?success=Buyer Deleted Successfully');
+        })
+        it("should redirect to '/admin/allBuyers' with error if admin gave the wrong password",async()=>{
+            req.body.del_password='1234'
+            req.params.uid='00000000-0000-4000-8000-000000000005'
+            await AdminController.deleteBuyer(req,res)
+            expect(res.redirect).toHaveBeenCalledWith('/admin/allBuyers?error=BadRequest: Password Entered Not Valid');
+        })
+        it("should redirect to '/admin/allBuyers' with error if admin gave the invalid id to delete",async()=>{
+            req.params.uid='00000000-0000-4000-8000-111000000003'
+            await AdminController.deleteBuyer(req,res)
+            expect(res.redirect).toHaveBeenCalledWith('/admin/allBuyers?error=BadRequest: OOPS something went wrong could not delete account');
+        })
     });
     describe('Admin View System Stats Functionality : AdminController statsPage Method;', () => {
         let req;
@@ -424,70 +489,6 @@ describe('Admin Functionalities Integration Tests', () => {
             await AdminController.statsPage(req,res)
             expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/admin[?]error/));
         });
-    });
-    describe('Admin Delete Farmer Functionality : AdminController deleteFarmer Method;', () => {
-        let req;
-        beforeEach(() => {
-            req={
-                params:{uid:''},
-                body:{
-                    del_password:'12345'
-                },
-                session:{user:{uid:'00000000-0000-4000-8000-000000000001'}}
-            }
-        });
-        it("redirect to '/admin/allfarmers' with success message if no error",async ()=>{
-            await sql.begin(async sql => {
-                await sql`INSERT INTO UserInfo (uid,email, type, password, first_name,last_name,gender) VALUES ('00000000-0000-4000-8000-111000000003','testdel@gmail.com','farmer','passworddel','testFirstNamedel','testlastNamedel','Male');`
-                await sql`INSERT INTO Farmer VALUES ('00000000-0000-4000-8000-111000000003','981111300V','0777111003','Colombo','addressdel');`
-              })
-                req.params.uid='00000000-0000-4000-8000-111000000003'
-                await AdminController.deleteFarmer(req,res);
-                expect(res.redirect).toHaveBeenCalledWith('/admin/allFarmers?success=Farmer Deleted Successfully');
-        })
-        it("should redirect to '/admin/farmer' with error if admin gave the wrong password",async()=>{
-            req.body.del_password='1234'
-            req.params.uid='00000000-0000-4000-8000-000000000003'
-            await AdminController.deleteFarmer(req,res)
-            expect(res.redirect).toHaveBeenCalledWith('/admin/farmer/00000000-0000-4000-8000-000000000003?error=BadRequest: Password Entered Not Valid');
-        })
-        it("should redirect to '/admin/farmer' with error if admin gave the invalid id to delete",async()=>{
-            req.params.uid='00000000-0000-4000-8000-111000000003'
-            await AdminController.deleteFarmer(req,res)
-            expect(res.redirect).toHaveBeenCalledWith('/admin/farmer/00000000-0000-4000-8000-111000000003?error=BadRequest: OOPS something went wrong could not delete account');
-        })
-    });
-    describe('Admin Delete Buyer Functionality : AdminController deleteBuyer Method;', () => {
-        let req;
-        beforeEach(() => {
-            req={
-                params:{uid:''},
-                body:{
-                    del_password:'12345'
-                },
-                session:{user:{uid:'00000000-0000-4000-8000-000000000001'}}
-            }
-        });
-        it("should redirect to '/admin/allBuyers' with success message if no error",async ()=>{
-            await sql.begin(async sql => {
-                await sql`INSERT INTO UserInfo (uid,email, type, password, first_name,last_name,gender) VALUES ('00000000-0000-4000-8000-111000000003','testdel@gmail.com','buyer','passworddel','testFirstNamedel','testlastNamedel','Male');`
-                await sql`INSERT INTO Buyer VALUES ('00000000-0000-4000-8000-111000000003','981111300V','0777111003','Colombo');`
-              })
-                req.params.uid='00000000-0000-4000-8000-111000000003'
-                await AdminController.deleteBuyer(req,res);
-                expect(res.redirect).toHaveBeenCalledWith('/admin/allBuyers?success=Buyer Deleted Successfully');
-        })
-        it("should redirect to '/admin/buyer' with error if admin gave the wrong password",async()=>{
-            req.body.del_password='1234'
-            req.params.uid='00000000-0000-4000-8000-000000000005'
-            await AdminController.deleteBuyer(req,res)
-            expect(res.redirect).toHaveBeenCalledWith('/admin/buyer/00000000-0000-4000-8000-000000000005?error=BadRequest: Password Entered Not Valid');
-        })
-        it("should redirect to '/admin/buyer' with error if admin gave the invalid id to delete",async()=>{
-            req.params.uid='00000000-0000-4000-8000-111000000003'
-            await AdminController.deleteBuyer(req,res)
-            expect(res.redirect).toHaveBeenCalledWith('/admin/buyer/00000000-0000-4000-8000-111000000003?error=BadRequest: OOPS something went wrong could not delete account');
-        })
     });
     describe('Admin View Posts Functionality : Admin Controller adminPostsPage Method;', () => {
         let req;
