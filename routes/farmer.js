@@ -8,7 +8,8 @@ const ImageController = require('../controllers/imageController');
 const ifLoggedIn = require('../middleware/ifLoggedIn');
 const ifNotLoggedIn = require('../middleware/ifNotLoggedIn');
 const ifFarmer =require('../middleware/ifFarmer');
-const uploadFileMiddleware = require('../middleware/upload');
+const { uploadFileMiddleware } = require('../middleware/upload');
+
 
 //GET Reqs
 router.get('/',ifLoggedIn, ifFarmer, FarmerController.homePage);

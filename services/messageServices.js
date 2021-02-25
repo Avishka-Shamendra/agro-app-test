@@ -8,11 +8,11 @@ class messageServices{
     static async addRequest({
         title,description},uid, postid){
             const user = await User.getUserById(uid);
-        if (!user && user.type!='buyer') {
+        if (!user || user.type!='buyer') {
             throw new Errors.Unauthorized('You do not have permission to add new posts');
         }
             const post=await Post.getPost(postid);
-        if(!post && post.length[0]){
+        if(!post){
             throw new Errors.BadRequest('OOPS could not send message');
         }
         const request=await BuyerRequest.checkAvailable(uid,postid);

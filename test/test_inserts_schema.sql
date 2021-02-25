@@ -7,12 +7,18 @@ INSERT INTO UserInfo (uid,email, type, password, first_name,last_name,gender) VA
 INSERT INTO UserInfo (uid,email, type, password, first_name,last_name,gender) VALUES ('00000000-0000-4000-8000-000000000004','test4@gmail.com','buyer','$2b$10$PtqGLU4vwx03Ln6gGc32z.OpXa/uJRhNIXkVSFjeDn9grElRlpx1e','testFirstNameD','testlastNameD','Male');
 INSERT INTO UserInfo (uid,email, type, password, first_name,last_name,gender) VALUES ('00000000-0000-4000-8000-000000000005','test5@gmail.com','buyer','$2b$10$PtqGLU4vwx03Ln6gGc32z.OpXa/uJRhNIXkVSFjeDn9grElRlpx1e','testFirstNameE','testlastNameE','Male');
 
+-- banned user insert
+INSERT INTO UserInfo (uid,email, type, password, first_name,last_name,gender,banned) VALUES ('00000000-0000-4000-8000-000000000006','test6@gmail.com','buyer','$2b$10$PtqGLU4vwx03Ln6gGc32z.OpXa/uJRhNIXkVSFjeDn9grElRlpx1e','testFirstName6','testlastName6','Male','true');
+-- user with password 6 charactors long
+INSERT INTO UserInfo (uid,email, type, password, first_name,last_name,gender) VALUES ('00000000-0000-4000-8000-000000000007','test7@gmail.com','buyer','$2b$10$dJOQi73zTgi.tWOMK57yVeQOOtqCuLUcfREUKTiSMwwLUtGqK/A8K','testFirstName7','testlastName7','Male');
 
 INSERT INTO Farmer VALUES ('00000000-0000-4000-8000-000000000002','981000200V','0777000002','Gampaha','address2');
 INSERT INTO Farmer VALUES ('00000000-0000-4000-8000-000000000003','981000300V','0777000003','Colombo','address3');
 
 INSERT INTO Buyer VALUES ('00000000-0000-4000-8000-000000000004','981000400V','0777000004','Colombo');
 INSERT INTO Buyer VALUES ('00000000-0000-4000-8000-000000000005','981000500V','0777000005','Colombo');
+INSERT INTO Buyer VALUES ('00000000-0000-4000-8000-000000000006','981000600V','0777000006','Colombo');
+INSERT INTO Buyer VALUES ('00000000-0000-4000-8000-000000000007','981000700V','0777000007','Colombo');
 
 INSERT INTO Post VALUES('10000000-0000-4000-8000-000000000000','00000000-0000-4000-8000-000000000002','Test Product 1','Test Post 1','Descriiption 1','vegetable',100,100,'Colombo','Address 1','0777100000','Active',NOW()::DATE,NOW()::DATE + INTERVAL '30 days',false);
 INSERT INTO Post VALUES('20000000-0000-4000-8000-000000000000','00000000-0000-4000-8000-000000000002','Test Product 2','Test Post 2','Descriiption 2','vegetable',200,200,'Colombo','Address 2','0777200000','Active',NOW()::DATE,NOW()::DATE + INTERVAL '30 days',false);
@@ -28,3 +34,5 @@ INSERT INTO Buyer_Request  VALUES('66666666-0000-4000-8000-000000000000','000000
 
 INSERT INTO Complain VALUES('00000000-0000-4111-8000-000000000000','00000000-0000-4000-8000-000000000004','00000000-0000-4000-8000-000000000003','This is the test complain 1',NOW()::DATE);
 INSERT INTO Complain VALUES('00000000-0000-4222-8000-000000000000','00000000-0000-4000-8000-000000000002','00000000-0000-4000-8000-000000000004','This is the test complain 2',NOW()::DATE);
+
+

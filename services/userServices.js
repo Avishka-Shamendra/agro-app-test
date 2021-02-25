@@ -74,7 +74,8 @@ class UserService {
 
 
         const user = await User.findUser(email);
-        if(!user){
+        const current_user = await User.getUserById(uid);
+        if(!current_user){
             throw new Errors.BadRequest('No Such User Exist');
         }
         if (user && user.uid!=uid) {
@@ -110,6 +111,10 @@ class UserService {
 
 
         const user = await User.findUser(email);
+        const current_user = await Farmer.getFarmer(uid);
+        if(!current_user){
+            throw new Errors.BadRequest('No Such Farmer Exist');
+        }
         if (user && user.uid!=uid) {
             throw new Errors.BadRequest(' Email is already registered');
         }
@@ -144,6 +149,10 @@ class UserService {
 
 
         const user = await User.findUser(email);
+        const current_user = await Buyer.getBuyer(uid);
+        if(!current_user){
+            throw new Errors.BadRequest('No Such Buyer Exist');
+        }
         if (user && user.uid!=uid) {
             throw new Errors.BadRequest(' Email is already registered');
         }

@@ -179,10 +179,10 @@ class AdminController {
         }catch (e) {
             logger.error(e);
             if (req.url === `/buyer/${req.params.uid}/ban`){
-                res.redirect(`/admin/buyer/${req.params.uid}?error=${e}`)
+                res.redirect(`/admin/allBuyers?error=${e}`)
             }
             else if (req.url === `/farmer/${req.params.uid}/ban`){
-                res.redirect(`/admin/farmer/${req.params.uid}?error=${e}`)
+                res.redirect(`/admin/allFarmers?error=${e}`)
             }
             else{
                 res.redirect(`/admin?error=${e}`)
@@ -209,10 +209,10 @@ class AdminController {
         }catch (e) {
             logger.error(e);
             if (req.url === `/buyer/${req.params.uid}/unban`){
-                res.redirect(`/admin/buyer/${req.params.uid}?error=${e}`)
+                res.redirect(`/admin/allBuyers?error=${e}`)
             }
             else if (req.url === `/farmer/${req.params.uid}/unban`){
-                res.redirect(`/admin/farmer/${req.params.uid}?error=${e}`)
+                res.redirect(`/admin/allFarmers?error=${e}`)
             }
             else{
                 res.redirect(`/admin?error=${e}`)
@@ -241,7 +241,7 @@ class AdminController {
             res.redirect('/admin/allFarmers?success=Farmer Deleted Successfully');
         }catch (e) {
             logger.error(e);
-            res.redirect(`/admin/farmer/${account_uid}?error=${e}`);
+            res.redirect(`/admin/allFarmers?error=${e}`);
         }
     }
 
@@ -252,7 +252,7 @@ class AdminController {
             res.redirect('/admin/allBuyers?success=Buyer Deleted Successfully');
         }catch (e) {
             logger.error(e);
-            res.redirect(`/admin/buyer/${account_uid}?error=${e}`)
+            res.redirect(`/admin/allBuyers?error=${e}`)
         }
     }
 
