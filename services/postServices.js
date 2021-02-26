@@ -43,17 +43,6 @@ class postServices{
 
     }
 
-    static async getAllActivePosts(){
-        const posts = await Post.getAllActivePosts();
-        if(posts){
-            posts.forEach((post)=>{
-                post.img_b64 = img_add_keyword_bitstream(post.img_b64);
-                return post;
-            });
-        } 
-        return posts;
-    }
-
     static async getAllActivePostsForBuyer(buyer_id){
         const posts = await Post.getAllActivePostsWithMsgState(buyer_id);
         if(posts){
