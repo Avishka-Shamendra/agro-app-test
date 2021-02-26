@@ -1,0 +1,75 @@
+error: admin-controller [2021-02-26 01:04:08 PM +0530] "BadRequest"
+error: admin-controller [2021-02-26 01:04:08 PM +0530] "Unauthorized"
+error: admin-controller [2021-02-26 01:04:08 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test","invalids":["test"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-26 01:04:09 PM +0530] "BadRequest"
+error: admin-controller [2021-02-26 01:04:09 PM +0530] "BadRequest"
+error: admin-controller [2021-02-26 01:04:09 PM +0530] undefined
+error: admin-controller [2021-02-26 01:04:09 PM +0530] undefined
+error: admin-controller [2021-02-26 01:04:09 PM +0530] "BadRequest"
+error: admin-controller [2021-02-26 01:04:09 PM +0530] "BadRequest"
+error: admin-controller [2021-02-26 01:04:09 PM +0530] "BadRequest"
+error: admin-controller [2021-02-26 01:04:09 PM +0530] "BadRequest"
+error: admin-controller [2021-02-26 01:04:09 PM +0530] "BadRequest"
+error: admin-controller [2021-02-26 01:04:09 PM +0530] "BadRequest"
+error: admin-controller [2021-02-26 01:04:09 PM +0530] "BadRequest"
+error: admin-controller [2021-02-26 01:04:09 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-26 01:04:09 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-26 01:04:09 PM +0530] "InternalServerError"
+error: admin-controller [2021-02-26 01:04:09 PM +0530] "BadRequest"
+error: admin-controller [2021-02-26 01:04:09 PM +0530] "BadRequest"
+error: admin-controller [2021-02-26 01:04:09 PM +0530] "BadRequest"
+error: admin-controller [2021-02-26 01:04:09 PM +0530] "BadRequest"
+error: admin-controller [2021-02-26 01:04:09 PM +0530] undefined
+error: admin-controller [2021-02-26 01:04:09 PM +0530] undefined
+error: admin-controller [2021-02-26 01:04:09 PM +0530] undefined
+error: post-controller [2021-02-26 01:04:10 PM +0530] undefined
+error: post-controller [2021-02-26 01:04:10 PM +0530] undefined
+error: complains-controller [2021-02-26 01:04:10 PM +0530] undefined
+error: complains-controller [2021-02-26 01:04:10 PM +0530] undefined
+error: message-controller [2021-02-26 01:04:10 PM +0530] undefined
+error: message-controller [2021-02-26 01:04:10 PM +0530] undefined
+error: admin-controller [2021-02-26 01:04:12 PM +0530] [{"message":"\"Min. Unit Price\" must be greater than or equal to 0","path":["min_price"],"type":"number.min","context":{"limit":0,"value":-100,"label":"Min. Unit Price","key":"min_price"}}]
+error: admin-controller [2021-02-26 01:04:13 PM +0530] undefined
+error: admin-controller [2021-02-26 01:04:13 PM +0530] "BadRequest"
+error: admin-controller [2021-02-26 01:04:13 PM +0530] "BadRequest"
+error: admin-controller [2021-02-26 01:04:13 PM +0530] [{"message":"\"NIC Number\" should be more than 10 characters","path":["nicNumber"],"type":"string.min","context":{"limit":10,"value":"98100","label":"NIC Number","key":"nicNumber"}}]
+error: admin-controller [2021-02-26 01:04:13 PM +0530] "BadRequest"
+error: admin-controller [2021-02-26 01:04:13 PM +0530] "BadRequest"
+error: admin-controller [2021-02-26 01:04:13 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test1","invalids":["test1"],"label":"Email","key":"email"}}]
+error: admin-controller [2021-02-26 01:04:13 PM +0530] "BadRequest"
+error: post-controller [2021-02-26 01:04:13 PM +0530] undefined
+error: complains-controller [2021-02-26 01:04:13 PM +0530] [{"message":"\"Reasons\" length must be at least 20 characters long","path":["reasons"],"type":"string.min","context":{"limit":20,"value":"A","label":"Reasons","key":"reasons"}}]
+error: complains-controller [2021-02-26 01:04:13 PM +0530] "Unauthorized"
+error: message-controller [2021-02-26 01:04:14 PM +0530] [{"message":"\"Title\" length must be at least 5 characters long","path":["title"],"type":"string.min","context":{"limit":5,"value":"ab","label":"Title","key":"title"}}]
+error: message-controller [2021-02-26 01:04:14 PM +0530] [{"message":"\"Message\" length must be at least 20 characters long","path":["description"],"type":"string.min","context":{"limit":20,"value":"ab","label":"Message","key":"description"}}]
+error: message-controller [2021-02-26 01:04:14 PM +0530] "Unauthorized"
+error: message-controller [2021-02-26 01:04:14 PM +0530] "BadRequest"
+error: message-controller [2021-02-26 01:04:14 PM +0530] "Unauthorized"
+error: message-controller [2021-02-26 01:04:14 PM +0530] undefined
+error: message-controller [2021-02-26 01:04:14 PM +0530] undefined
+error: root-controller [2021-02-26 01:04:15 PM +0530] undefined
+error: root-controller [2021-02-26 01:04:15 PM +0530] [{"message":"\"email\" is not allowed to be empty","path":["email"],"type":"string.empty","context":{"label":"email","value":"","key":"email"}}]
+error: root-controller [2021-02-26 01:04:15 PM +0530] "BadRequest"
+error: root-controller [2021-02-26 01:04:16 PM +0530] "BadRequest"
+error: root-controller [2021-02-26 01:04:16 PM +0530] "Unauthorized"
+error: root-controller [2021-02-26 01:04:16 PM +0530] undefined
+error: root-controller [2021-02-26 01:04:16 PM +0530] [{"message":"\"Password\" length must be at least 6 characters long","path":["new_pwd"],"type":"string.min","context":{"limit":6,"value":"56789","label":"Password","key":"new_pwd"}}]
+error: root-controller [2021-02-26 01:04:16 PM +0530] "BadRequest"
+error: root-controller [2021-02-26 01:04:16 PM +0530] "BadRequest"
+error: root-controller [2021-02-26 01:04:16 PM +0530] "BadRequest"
+error: farmer-controller [2021-02-26 01:04:18 PM +0530] undefined
+error: farmer-controller [2021-02-26 01:04:18 PM +0530] "BadRequest"
+error: farmer-controller [2021-02-26 01:04:18 PM +0530] "BadRequest"
+error: farmer-controller [2021-02-26 01:04:18 PM +0530] [{"message":"\"NIC Number\" should be more than 10 characters","path":["nicNumber"],"type":"string.min","context":{"limit":10,"value":"98100","label":"NIC Number","key":"nicNumber"}}]
+error: farmer-controller [2021-02-26 01:04:18 PM +0530] "BadRequest"
+error: farmer-controller [2021-02-26 01:04:18 PM +0530] "BadRequest"
+error: farmer-controller [2021-02-26 01:04:18 PM +0530] [{"message":"\"Email\" must be a valid email","path":["email"],"type":"string.email","context":{"value":"test1","invalids":["test1"],"label":"Email","key":"email"}}]
+error: farmer-controller [2021-02-26 01:04:18 PM +0530] "BadRequest"
+error: complains-controller [2021-02-26 01:04:18 PM +0530] [{"message":"\"Reasons\" length must be at least 20 characters long","path":["reasons"],"type":"string.min","context":{"limit":20,"value":"A","label":"Reasons","key":"reasons"}}]
+error: complains-controller [2021-02-26 01:04:18 PM +0530] "Unauthorized"
+error: post-controller [2021-02-26 01:04:18 PM +0530] "Unauthorized"
+error: post-controller [2021-02-26 01:04:18 PM +0530] [{"message":"\"Contact Number\" must be 10 digits","path":["phone_num"],"type":"string.length","context":{"limit":10,"value":"A","encoding":"utf8","label":"phone_num","key":"phone_num"}},{"message":"\"Contact Number\" contains invalid characters","path":["phone_num"],"type":"string.pattern.base","context":{"regex":{},"value":"A","label":"phone_num","key":"phone_num"}}]
+error: post-controller [2021-02-26 01:04:18 PM +0530] undefined
+error: post-controller [2021-02-26 01:04:18 PM +0530] undefined
+error: post-controller [2021-02-26 01:04:18 PM +0530] undefined
+error: image-controller [2021-02-26 01:04:19 PM +0530] "BadRequest"
