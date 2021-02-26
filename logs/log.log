@@ -1,2 +1,0 @@
-error: message-controller [2021-02-25 06:36:56 PM +0530] [{"message":"\"Message\" length must be at least 20 characters long","path":["description"],"type":"string.min","context":{"limit":20,"value":"Test Reasons","label":"Message","key":"description"}}]
-error: admin-controller [2021-02-25 06:37:01 PM +0530] "BadRequest"
