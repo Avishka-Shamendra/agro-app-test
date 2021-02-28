@@ -13,7 +13,6 @@ const imageFilter = (req, file, cb) => {
 };
 
 function fileError(err, next) {
-    console.log('error', err);
     next(err);
 }
 

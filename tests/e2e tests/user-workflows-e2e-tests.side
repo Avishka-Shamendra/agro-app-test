@@ -2,7 +2,7 @@
   "id": "165ae5a1-8fb6-492c-a938-777bf19d3578",
   "version": "2.0",
   "name": "agro-app-e2e",
-  "url": "http://localhost:3000/admin",
+  "url": "http://localhost:3000/",
   "tests": [{
     "id": "e7f64dd6-b593-49dc-a2f0-45e05672e926",
     "name": "buyer workflow",
@@ -14,10 +14,10 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "69654451-f43c-4dfb-bf2d-1c747b475ee6",
+      "id": "ad49d726-b0c5-474f-bb10-60ca69d8538c",
       "comment": "",
       "command": "setWindowSize",
-      "target": "1536x838",
+      "target": "1280x720",
       "targets": [],
       "value": ""
     }, {
@@ -1300,6 +1300,13 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "5a8f7c77-3d39-49f9-b36b-456fc6d77f79",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1280x720",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "053b358b-cb1a-4941-a721-105818ebb64f",
       "comment": "",
       "command": "click",
@@ -1559,6 +1566,58 @@
         ["xpath=//h3[contains(.,'Admin Panel')]", "xpath:innerText"]
       ],
       "value": "Admin Panel"
+    }, {
+      "id": "6e732eb6-b28b-4a6d-a25e-8a509daf0c74",
+      "comment": "",
+      "command": "click",
+      "target": "id=search",
+      "targets": [
+        ["id=search", "id"],
+        ["name=search", "name"],
+        ["css=#search", "css:finder"],
+        ["xpath=//input[@id='search']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "58032a85-145a-4f63-9441-b31c5b772374",
+      "comment": "",
+      "command": "type",
+      "target": "id=search",
+      "targets": [
+        ["id=search", "id"],
+        ["name=search", "name"],
+        ["css=#search", "css:finder"],
+        ["xpath=//input[@id='search']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "981000300"
+    }, {
+      "id": "a84ff76c-6558-4ddc-8492-7ea5233cb19c",
+      "comment": "",
+      "command": "type",
+      "target": "id=search",
+      "targets": [
+        ["id=search", "id"],
+        ["name=search", "name"],
+        ["css=#search", "css:finder"],
+        ["xpath=//input[@id='search']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "TestFirstNameB"
+    }, {
+      "id": "a87c179f-3f5f-4b34-a57d-566d5afd413d",
+      "comment": "",
+      "command": "click",
+      "target": "id=search",
+      "targets": [
+        ["id=search", "id"],
+        ["name=search", "name"],
+        ["css=#search", "css:finder"],
+        ["xpath=//input[@id='search']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
     }, {
       "id": "e69509b6-c274-433b-9a7f-68e3058b938a",
       "comment": "",
@@ -2551,6 +2610,13 @@
       "comment": "",
       "command": "open",
       "target": "http://localhost:3000/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "42424de7-3c42-4e38-81a3-cccb4345bb5f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1280x720",
       "targets": [],
       "value": ""
     }, {

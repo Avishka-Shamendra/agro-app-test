@@ -1,7 +1,7 @@
 const rootController = require('../../../controllers/rootController');
 const sql = require('../../../config/db');
 let server;
-describe('root Controller', () => {
+describe('Common User Functionalities', () => {
     const res={
         render:null,
         redirect:null,
@@ -29,7 +29,7 @@ describe('root Controller', () => {
             
             req={
                 query:{},
-                session:{user:{}}
+                session:{}
             } 
         });
         it('should render index page if no error', async ()=>{
@@ -38,7 +38,7 @@ describe('root Controller', () => {
                 posts:expect.any(Array)
             }));
         });
-        it('should render index if any error', async()=>{
+        it('should render index with error message if any error', async()=>{
             req.query=null
             await rootController.indexPage(req,res)
             expect(res.render).toHaveBeenCalledWith('index', expect.objectContaining({
@@ -47,19 +47,29 @@ describe('root Controller', () => {
         });
 
     });
-    describe('Load Credits Page Functionality : RootController creditpage Method;', ()=>{
-        it('should render _credits_aboutus if any error',()=>{
+    describe('User View Login Page Funtionality : RootController login page Method;', ()=>{
+        it('should render login page with necessary data if no request error ',()=>{
             const req={
-                query:{error:'test error'},
+                query:{error:'test error',
+                       email:'test@gmail.com',
+                       adminRegSuccess:"admin register successful",
+                       farmerRegSuccess:"farmer register successful",
+                       buyerRegSuccess:"buyer register successful",
+                       del_acc_success:"delete account successful"},
                 session:{user:{uid:1}}
             }
-            rootController.creditPage(req,res)
-            expect(res.render).toHaveBeenCalledWith('_credits_aboutus',{
+            rootController.loginPage(req,res);
+            expect(res.render).toHaveBeenCalledWith('login',{
                 error:'test error',
+                email:'test@gmail.com',
                 user:{uid:1},
+                adminRegSuccess:"admin register successful",
+                farmerRegSuccess:"farmer register successful",
+                buyerRegSuccess:"buyer register successful",
+                del_acc_success:"delete account successful"
             })
         })
-    })
+    });
     describe('User Login Funtionality : RootController login Method;', ()=>{
         let req;
         beforeEach(()=>{
@@ -120,33 +130,10 @@ describe('root Controller', () => {
         it('should redirect to index page if any error',async()=>{
             req.session=null
             await rootController.logout(req,res)
-            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]/))
+            expect(res.redirect).toHaveBeenCalledWith(expect.stringMatching(/[/]/))//middleware will handle this
         })
         
     })
-    describe('User View Login Page Funtionality : RootController login page Method;', ()=>{
-        it('should render login page with error,and email if any error ',()=>{
-            const req={
-                query:{error:'test error',
-                       email:'test@gmail.com',
-                       adminRegSuccess:"admin register successful",
-                       farmerRegSuccess:"farmer register successful",
-                       buyerRegSuccess:"buyer register successful",
-                       del_acc_success:"delete account successful"},
-                session:{user:{uid:1}}
-            }
-            rootController.loginPage(req,res);
-            expect(res.render).toHaveBeenCalledWith('login',{
-                error:'test error',
-                email:'test@gmail.com',
-                user:{uid:1},
-                adminRegSuccess:"admin register successful",
-                farmerRegSuccess:"farmer register successful",
-                buyerRegSuccess:"buyer register successful",
-                del_acc_success:"delete account successful"
-            })
-        })
-    });
     describe('User View Edit Profile Page Funtionality : RootController editprofilepage Method;', ()=>{
         it('should render userEditProfile if any error',()=>{
             const req={
@@ -247,6 +234,19 @@ describe('root Controller', () => {
         await sql`INSERT INTO UserInfo (uid,email, type, password, first_name,last_name,gender) VALUES ('00000000-0000-4000-8000-000000000007','test7@gmail.com','buyer','$2b$10$dJOQi73zTgi.tWOMK57yVeQOOtqCuLUcfREUKTiSMwwLUtGqK/A8K','testFirstName7','testlastName7','Male');
         `
     })
+    })
+    describe('Load Credits Page Functionality : RootController creditpage Method;', ()=>{
+        it('should render credits page if no error',()=>{
+            const req={
+                query:{error:'test error'},
+                session:{user:{uid:1}}
+            }
+            rootController.creditPage(req,res)
+            expect(res.render).toHaveBeenCalledWith('_credits_aboutus',{
+                error:'test error',
+                user:{uid:1},
+            })
+        })
     })
 
 });
